@@ -19,3 +19,5 @@ work/
 dist/
 build/
 .env
+/efbench-*.log
+/slurm-*.log

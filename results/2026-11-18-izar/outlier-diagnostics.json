@@ -1,0 +1,50 @@
+[
+  {
+    "model": "FireNet",
+    "dt": 4,
+    "sequences": {
+      "outdoor_day1_data": {
+        "windows": 203,
+        "aee": 2.043927026121068,
+        "aee_n": 203,
+        "aee_invalid": 0,
+        "outlier_pct": 19.619038354220063,
+        "outlier_pct_n": 203,
+        "outlier_pct_invalid": 0
+      }
+    },
+    "checkpoint_sha256": "a675762d1c0e2bce1d4361e328564d97ace322ee102da49b0890359e31a0de26",
+    "upstream_revision": "e81f9630a145da8c7e57b2cfd38cf6c0b47ac14f",
+    "outlier_diagnostics": {
+      "upstream_prediction_relative_pct": 19.619038354220063,
+      "gt_relative_pct": 19.61903838976975,
+      "absolute_3px_only_pct": 19.61903838976975,
+      "prediction_formula_pct": 19.61903838976975,
+      "windows": 203
+    }
+  },
+  {
+    "model": "RecEVFlowNet",
+    "dt": 4,
+    "sequences": {
+      "indoor_flying3_data": {
+        "windows": 736,
+        "aee": 3.0085859065864105,
+        "aee_n": 736,
+        "aee_invalid": 0,
+        "outlier_pct": 30.058278645747517,
+        "outlier_pct_n": 736,
+        "outlier_pct_invalid": 0
+      }
+    },
+    "checkpoint_sha256": "5adb204b675a556cd292661236c45f742c2d629b9e04e3859ee482004bb0d8fe",
+    "upstream_revision": "e81f9630a145da8c7e57b2cfd38cf6c0b47ac14f",
+    "outlier_diagnostics": {
+      "upstream_prediction_relative_pct": 30.058278645747517,
+      "gt_relative_pct": 30.058278671151903,
+      "absolute_3px_only_pct": 30.058278671151903,
+      "prediction_formula_pct": 30.058278671151903,
+      "windows": 736
+    }
+  }
+]

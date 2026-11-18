@@ -8,6 +8,8 @@
 
 Izar上の著者配布UZH/MVSECを検査し、FireNet / RecEVFlowNetの学習速度を実測済みです。100 epoch・1 seedの推定は約7.0 / 13.5時間。[GPU実行手順と測定条件](docs/IZAR.md)を参照してください。`demo`は合成データによる実装検証です。
 
+配布2モデルのMVSEC評価は完了し、AEEは全16条件で論文との差0.009 px未満でした。外れ値率はdt4の2条件に差が残り、完全再現とは判定していません。[全条件の結果](results/2026-11-18-izar/paper-comparison.csv)。Step 2の本学習は未投入です。
+
 ## 実装済み
 
 - NeurIPS 2021のモデル18種を固定コミットから収録。MITライセンス・出典を保持。

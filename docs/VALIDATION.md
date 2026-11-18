@@ -16,7 +16,7 @@
 | FWL / RSAT / loss | zero-flow比=1、有限勾配を確認 |
 | 学習・保存・再読込・評価 | 合成HDF5で一連の処理を確認 |
 | epoch境界からの再開 | 中断なし2 epochsと重みが完全一致 |
-| 原実装再現経路 | 合成HDF5とstate_dictでdt1/dt4を確認。実配布重みは未検証 |
+| 原実装再現経路 | 合成HDF5とstate_dictでdt1/dt4を確認。実配布2モデルでも評価完了、外れ値率2条件は未一致（下記） |
 | 実験表・集計 | 60設定生成、同seed重複拒否を確認 |
 
 ```bash
@@ -31,5 +31,7 @@ LayerSeg上流はaffine_gridのalign_cornersを省略しており、現行PyTorc
 上流には大きな実験ファイルも追跡されているため、アダプターは全working treeを走査せず、読み込むPythonファイルのGit blobハッシュを固定コミットと照合します。
 
 2026-11-18にIzarの著者配布UZH 140本とMVSEC 4収録のメタデータ・端点を検査し、元記録単位の116/24 splitを生成しました。FireNet / RecEVFlowNetは実UZHとV100上で各120更新（20 warmup＋100計測）、有限loss・勾配のチェック付きで完走しました。詳細は[IZAR.md](IZAR.md)を参照してください。
+
+配布重み2モデル×dt1/dt4×4収録の評価を完了。AEEは16/16条件で論文との差0.00859 px以下、外れ値率は14/16条件で事前許容差内です。FireNet outdoor_day1 dt4とRecEVFlowNet indoor_flying3 dt4の外れ値率に差が残り、完全再現の判定はしていません。[全条件の結果](../results/2026-11-18-izar/paper-comparison.csv)。
 
 **未実施:** 全条件の本学習、AffineObjectsのGT対応確認と実評価。短い速度計測は学習完了や精度再現を意味しません。

@@ -1,0 +1,358 @@
+[
+  {
+    "protocol": "hagenaars2021-upstream",
+    "model": "FireNet",
+    "dt": 1,
+    "summary": {
+      "windows": 8629,
+      "aee": 1.2380575160593414,
+      "aee_n": 8629,
+      "aee_invalid": 0,
+      "outlier_pct": 8.682397812570528,
+      "outlier_pct_n": 8629,
+      "outlier_pct_invalid": 0
+    },
+    "sequences": {
+      "indoor_flying1_data": {
+        "windows": 2202,
+        "aee": 0.8883613566283259,
+        "aee_n": 2202,
+        "aee_invalid": 0,
+        "outlier_pct": 1.9309675536195319,
+        "outlier_pct_n": 2202,
+        "outlier_pct_invalid": 0
+      },
+      "indoor_flying2_data": {
+        "windows": 2661,
+        "aee": 1.620911709836529,
+        "aee_n": 2661,
+        "aee_invalid": 0,
+        "outlier_pct": 14.655694059936886,
+        "outlier_pct_n": 2661,
+        "outlier_pct_invalid": 0
+      },
+      "indoor_flying3_data": {
+        "windows": 2948,
+        "aee": 1.3457529797979373,
+        "aee_n": 2948,
+        "aee_invalid": 0,
+        "outlier_pct": 10.645151619856083,
+        "outlier_pct_n": 2948,
+        "outlier_pct_invalid": 0
+      },
+      "outdoor_day1_data": {
+        "windows": 818,
+        "aee": 0.5458444431065529,
+        "aee_n": 818,
+        "aee_invalid": 0,
+        "outlier_pct": 0.35172530901356436,
+        "outlier_pct_n": 818,
+        "outlier_pct_invalid": 0
+      }
+    },
+    "checkpoint_sha256": "a675762d1c0e2bce1d4361e328564d97ace322ee102da49b0890359e31a0de26",
+    "upstream_revision": "e81f9630a145da8c7e57b2cfd38cf6c0b47ac14f",
+    "notes": [
+      "Original last-partition event mask and prediction-magnitude outlier threshold",
+      "Metric buffers reset at sequence boundaries; no inference warmup exclusion"
+    ],
+    "comparison": {
+      "passed": true,
+      "rows": [
+        {
+          "sequence": "outdoor_day1",
+          "aee_delta": -0.004155556893447154,
+          "outlier_pct_delta": 0.00172530901356438,
+          "within_tolerance": true
+        },
+        {
+          "sequence": "indoor_flying1",
+          "aee_delta": -0.0016386433716740756,
+          "outlier_pct_delta": 0.0009675536195319356,
+          "within_tolerance": true
+        },
+        {
+          "sequence": "indoor_flying2",
+          "aee_delta": 0.0009117098365289955,
+          "outlier_pct_delta": 0.005694059936885765,
+          "within_tolerance": true
+        },
+        {
+          "sequence": "indoor_flying3",
+          "aee_delta": -0.004247020202062801,
+          "outlier_pct_delta": 0.00515161985608259,
+          "within_tolerance": true
+        }
+      ],
+      "aee_tolerance": 0.02,
+      "outlier_percentage_point_tolerance": 0.2
+    }
+  },
+  {
+    "protocol": "hagenaars2021-upstream",
+    "model": "FireNet",
+    "dt": 4,
+    "summary": {
+      "windows": 2152,
+      "aee": 4.4112894196547625,
+      "aee_n": 2152,
+      "aee_invalid": 0,
+      "outlier_pct": 49.796869897337274,
+      "outlier_pct_n": 2152,
+      "outlier_pct_invalid": 0
+    },
+    "sequences": {
+      "indoor_flying1_data": {
+        "windows": 549,
+        "aee": 3.350163248696178,
+        "aee_n": 549,
+        "aee_invalid": 0,
+        "outlier_pct": 42.50737052217452,
+        "outlier_pct_n": 549,
+        "outlier_pct_invalid": 0
+      },
+      "indoor_flying2_data": {
+        "windows": 664,
+        "aee": 5.706839915506897,
+        "aee_n": 664,
+        "aee_invalid": 0,
+        "outlier_pct": 61.032581601869765,
+        "outlier_pct_n": 664,
+        "outlier_pct_invalid": 0
+      },
+      "indoor_flying3_data": {
+        "windows": 736,
+        "aee": 4.686951518157186,
+        "aee_n": 736,
+        "aee_invalid": 0,
+        "outlier_pct": 53.42122096854323,
+        "outlier_pct_n": 736,
+        "outlier_pct_invalid": 0
+      },
+      "outdoor_day1_data": {
+        "windows": 203,
+        "aee": 2.043927026121068,
+        "aee_n": 203,
+        "aee_invalid": 0,
+        "outlier_pct": 19.619038354220063,
+        "outlier_pct_n": 203,
+        "outlier_pct_invalid": 0
+      }
+    },
+    "checkpoint_sha256": "a675762d1c0e2bce1d4361e328564d97ace322ee102da49b0890359e31a0de26",
+    "upstream_revision": "e81f9630a145da8c7e57b2cfd38cf6c0b47ac14f",
+    "notes": [
+      "Original last-partition event mask and prediction-magnitude outlier threshold",
+      "Metric buffers reset at sequence boundaries; no inference warmup exclusion"
+    ],
+    "comparison": {
+      "passed": false,
+      "rows": [
+        {
+          "sequence": "outdoor_day1",
+          "aee_delta": 0.003927026121067989,
+          "outlier_pct_delta": -1.310961645779937,
+          "within_tolerance": false
+        },
+        {
+          "sequence": "indoor_flying1",
+          "aee_delta": 0.00016324869617800886,
+          "outlier_pct_delta": 0.007370522174518612,
+          "within_tolerance": true
+        },
+        {
+          "sequence": "indoor_flying2",
+          "aee_delta": -0.0031600844931025662,
+          "outlier_pct_delta": 0.002581601869763972,
+          "within_tolerance": true
+        },
+        {
+          "sequence": "indoor_flying3",
+          "aee_delta": 0.00695151815718642,
+          "outlier_pct_delta": 0.001220968543229617,
+          "within_tolerance": true
+        }
+      ],
+      "aee_tolerance": 0.02,
+      "outlier_percentage_point_tolerance": 0.2
+    }
+  },
+  {
+    "protocol": "hagenaars2021-upstream",
+    "model": "RecEVFlowNet",
+    "dt": 1,
+    "summary": {
+      "windows": 8629,
+      "aee": 0.8749492282696356,
+      "aee_n": 8629,
+      "aee_invalid": 0,
+      "outlier_pct": 4.559580937993289,
+      "outlier_pct_n": 8629,
+      "outlier_pct_invalid": 0
+    },
+    "sequences": {
+      "indoor_flying1_data": {
+        "windows": 2202,
+        "aee": 0.595537673324009,
+        "aee_n": 2202,
+        "aee_invalid": 0,
+        "outlier_pct": 0.5169022184576886,
+        "outlier_pct_n": 2202,
+        "outlier_pct_invalid": 0
+      },
+      "indoor_flying2_data": {
+        "windows": 2661,
+        "aee": 1.1718499807266336,
+        "aee_n": 2661,
+        "aee_invalid": 0,
+        "outlier_pct": 8.050862957073727,
+        "outlier_pct_n": 2661,
+        "outlier_pct_invalid": 0
+      },
+      "indoor_flying3_data": {
+        "windows": 2948,
+        "aee": 0.9279037804365959,
+        "aee_n": 2948,
+        "aee_invalid": 0,
+        "outlier_pct": 5.622462904079129,
+        "outlier_pct_n": 2948,
+        "outlier_pct_invalid": 0
+      },
+      "outdoor_day1_data": {
+        "windows": 818,
+        "aee": 0.4704276169175575,
+        "aee_n": 818,
+        "aee_invalid": 0,
+        "outlier_pct": 0.25432549987994774,
+        "outlier_pct_n": 818,
+        "outlier_pct_invalid": 0
+      }
+    },
+    "checkpoint_sha256": "5adb204b675a556cd292661236c45f742c2d629b9e04e3859ee482004bb0d8fe",
+    "upstream_revision": "e81f9630a145da8c7e57b2cfd38cf6c0b47ac14f",
+    "notes": [
+      "Original last-partition event mask and prediction-magnitude outlier threshold",
+      "Metric buffers reset at sequence boundaries; no inference warmup exclusion"
+    ],
+    "comparison": {
+      "passed": true,
+      "rows": [
+        {
+          "sequence": "outdoor_day1",
+          "aee_delta": 0.0004276169175575495,
+          "outlier_pct_delta": 0.004325499879947736,
+          "within_tolerance": true
+        },
+        {
+          "sequence": "indoor_flying1",
+          "aee_delta": -0.004462326675991002,
+          "outlier_pct_delta": 0.006902218457688569,
+          "within_tolerance": true
+        },
+        {
+          "sequence": "indoor_flying2",
+          "aee_delta": 0.001849980726633671,
+          "outlier_pct_delta": -0.009137042926273153,
+          "within_tolerance": true
+        },
+        {
+          "sequence": "indoor_flying3",
+          "aee_delta": -0.0020962195634041114,
+          "outlier_pct_delta": -0.01753709592087027,
+          "within_tolerance": true
+        }
+      ],
+      "aee_tolerance": 0.02,
+      "outlier_percentage_point_tolerance": 0.2
+    }
+  },
+  {
+    "protocol": "hagenaars2021-upstream",
+    "model": "RecEVFlowNet",
+    "dt": 4,
+    "summary": {
+      "windows": 2152,
+      "aee": 2.9424823842388106,
+      "aee_n": 2152,
+      "aee_invalid": 0,
+      "outlier_pct": 29.50287435234247,
+      "outlier_pct_n": 2152,
+      "outlier_pct_invalid": 0
+    },
+    "sequences": {
+      "indoor_flying1_data": {
+        "windows": 549,
+        "aee": 2.1611590393624818,
+        "aee_n": 549,
+        "aee_invalid": 0,
+        "outlier_pct": 21.49152669702353,
+        "outlier_pct_n": 549,
+        "outlier_pct_invalid": 0
+      },
+      "indoor_flying2_data": {
+        "windows": 664,
+        "aee": 3.8975924153697314,
+        "aee_n": 664,
+        "aee_invalid": 0,
+        "outlier_pct": 40.70716546234782,
+        "outlier_pct_n": 664,
+        "outlier_pct_invalid": 0
+      },
+      "indoor_flying3_data": {
+        "windows": 736,
+        "aee": 3.0085859065864105,
+        "aee_n": 736,
+        "aee_invalid": 0,
+        "outlier_pct": 30.058278645747517,
+        "outlier_pct_n": 736,
+        "outlier_pct_invalid": 0
+      },
+      "outdoor_day1_data": {
+        "windows": 203,
+        "aee": 1.6917496907330958,
+        "aee_n": 203,
+        "aee_invalid": 0,
+        "outlier_pct": 12.50683004584214,
+        "outlier_pct_n": 203,
+        "outlier_pct_invalid": 0
+      }
+    },
+    "checkpoint_sha256": "5adb204b675a556cd292661236c45f742c2d629b9e04e3859ee482004bb0d8fe",
+    "upstream_revision": "e81f9630a145da8c7e57b2cfd38cf6c0b47ac14f",
+    "notes": [
+      "Original last-partition event mask and prediction-magnitude outlier threshold",
+      "Metric buffers reset at sequence boundaries; no inference warmup exclusion"
+    ],
+    "comparison": {
+      "passed": false,
+      "rows": [
+        {
+          "sequence": "outdoor_day1",
+          "aee_delta": 0.0017496907330958322,
+          "outlier_pct_delta": 0.006830045842139754,
+          "within_tolerance": true
+        },
+        {
+          "sequence": "indoor_flying1",
+          "aee_delta": 0.0011590393624816286,
+          "outlier_pct_delta": -0.018473302976470762,
+          "within_tolerance": true
+        },
+        {
+          "sequence": "indoor_flying2",
+          "aee_delta": -0.0024075846302684667,
+          "outlier_pct_delta": -0.01283453765218212,
+          "within_tolerance": true
+        },
+        {
+          "sequence": "indoor_flying3",
+          "aee_delta": 0.008585906586410452,
+          "outlier_pct_delta": 0.45827864574751587,
+          "within_tolerance": false
+        }
+      ],
+      "aee_tolerance": 0.02,
+      "outlier_percentage_point_tolerance": 0.2
+    }
+  }
+]
