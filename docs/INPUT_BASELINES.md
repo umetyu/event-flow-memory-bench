@@ -18,6 +18,8 @@
 
 履歴窓の長さは同じで、5ビン化によって長くはなりません。この2条件は窓内の時間情報の符号化を比べます。入力チャネル数に応じて最初の畳み込みのパラメータ数も変わるため、完全な同容量比較ではありません。設定、seed、サンプル順、flipの生成規約は共通です。
 
+2026-11-18に本学習を開始しました。countは **3256757_0**、voxel5は **3256757_1**。開始時点で両方RUNNING・有限lossの更新を確認しました。[開始時のスナップショット](../results/2026-11-18-izar/input-baselines-launch.json)。事前のsmoke array **3256755**は、両条件45更新と検証を完了し、GPU peak allocationはcount 2,667,008,000 bytes、voxel5 2,676,579,840 bytesでした。[smoke記録](../results/2026-11-18-izar/input-baselines-smoke.json)。本学習とは出力・checkpointを分離しています。
+
 採点は[matched-v1](PROTOCOL.md)です。配布重みのTable 1再現用とは入力partition・maskなどが異なるため、数値を同一条件のランキングに混ぜません。窓長sweepと3 seedsへの拡張は別段階です。今回追加する本学習はこの2条件のseed 0だけです。
 
 ## Izarでの実行

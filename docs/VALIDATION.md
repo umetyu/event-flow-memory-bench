@@ -47,3 +47,9 @@ Izar job 3256468で全36テストを実行し、35成功・任意のLayerSeg接�
 Izar job array 3256690で配布RNN/Leakyの4モデル・32条件を完走し、全評価区間でAEEと外れ値率が有限であることを確認しました。LeakyRecEVFlowNet・RNNFireNet・LeakyFireNetの24条件は既存許容差内、RNNRecEVFlowNetは論文値に未一致です。[結果と判定](../results/2026-11-18-izar/comparison.md)。モデル一覧を切り替えるSlurmスクリプトの構文、参照表の48行の一意性、GitHub CIの成功も確認しました。
 
 [56]はjob 3256469で100 epochとMVSEC dt1/dt4評価を完了しました。検証RSAT約1のままで、精度改善の確認には至っていません。工程の完了と論文再現成功を区別します。
+
+## 非再帰count / voxel5の実行前検証
+
+job array 3256755で各モデルを実UZHの8学習クロップ・別収録の1検証クロップに通しました。batch 8・1k入力・10k損失窓で各45更新、検証9窓を完了し、checkpointの保存も確認しました。既存全36テストは35成功・任意接続1件skipでした。両条件の設定はencoding / num_bins以外が一致し、本学習は共通の116/24 splitを使います。[smoke結果](../results/2026-11-18-izar/input-baselines-smoke.json)。
+
+本学習はjob 3256757で開始済みです。smokeの1 epochを100 epochの本学習完了や精度比較とは扱いません。

@@ -14,6 +14,8 @@ Izar上の著者配布UZH/MVSECを検査し、FireNet / RecEVFlowNetの学習速
 
 2026-11-18に[56]のUZH再学習をIzar job **3256469**で完了しました。V100 1枚・seed 0・100 epochsの学習は約39.5分、続けてMVSEC dt1/dt4を評価しました。[完了記録](results/2026-11-18-izar/zhu2019-completion.json)と[収録別結果](results/2026-11-18-izar/zhu2019-summary.json)。検証RSATは約1のままで、精度改善や論文再現の成功は確認できていません。これは著者配布実装ではなく、[差分を明記した論文ベースの再実装](docs/ZHU2019.md)です。
 
+同日に非再帰EVFlowNetのcount / voxel5を **3256757_0 / 3256757_1** で学習開始しました。両方seed 0・100 epochs、同じUZH分割・1k入力・10k損失窓で、終了後にMVSEC dt1/dt4を自動評価します。[開始時点の実行記録](results/2026-11-18-izar/input-baselines-launch.json)。事前に[実データ45更新ずつ・検証・GPUメモリの確認](results/2026-11-18-izar/input-baselines-smoke.json)を通過しました。これは学習完了や精度向上を示す記録ではありません。
+
 ## 実装済み
 
 - NeurIPS 2021のモデル18種を固定コミットから収録。MITライセンス・出典を保持。

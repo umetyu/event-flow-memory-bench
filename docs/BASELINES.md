@@ -17,6 +17,8 @@
 
 別途、後続の要因比較用に同じHagenaars実装の非再帰EVFlowNetのcount / 5-bin voxelを保持します。軽量版の対応モデルはFireFlowNetです。[56]をこの既存voxelモデルの別名として扱いません。
 
+この非再帰2条件は、追加指示を受けて2026-11-18にjob **3256757_0（count）/ 3256757_1（voxel5）** で本学習を開始しました。seed 0・100 epochとMVSEC testの実行仕様は[INPUT_BASELINES.md](INPUT_BASELINES.md)を参照してください。上の7モデルの完了済み評価表に、まだ結果のない2条件を混ぜません。
+
 ## [56]の2条件
 
 [Zhu et al., CVPR 2019](https://openaccess.thecvf.com/content_CVPR_2019/html/Zhu_Unsupervised_Event-Based_Learning_of_Optical_Flow_Depth_and_Egomotion_CVPR_2019_paper.html)が[56]です。[原論文 §4.1–4.2](https://arxiv.org/html/1812.08156#S4.SS1)の学習データはMVSEC outdoor_day2であり、UZHではありません。一方、Hagenaarsの各モデルはUZHからMVSECへの評価です。そのままの論文値の差には、学習データの違いも含まれます。

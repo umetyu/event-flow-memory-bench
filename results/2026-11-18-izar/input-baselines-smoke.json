@@ -1,0 +1,83 @@
+{
+  "job_id": 3256755,
+  "status": "completed_smoke_only",
+  "test_suite": {
+    "total": 36,
+    "passed": 35,
+    "skipped": 1
+  },
+  "train_crops": 8,
+  "validation_crops": 1,
+  "conditions": {
+    "count": {
+      "status": "completed",
+      "kind": "smoke_only",
+      "model": {
+        "name": "EVFlowNet",
+        "encoding": "cnt",
+        "num_bins": 2,
+        "base_num_channels": 32,
+        "kernel_size": 3,
+        "norm_input": false,
+        "mask_output": true,
+        "activations": [
+          "relu",
+          null
+        ],
+        "spiking_neuron": null
+      },
+      "seed": 0,
+      "epochs": 1,
+      "config_sha256": "f7ec2987b799b984cdeeed42af5daf5a63d0f988386e4eebd995f9de65ad5291",
+      "training_manifest_sha256": "340e85dc8f34b7b7993fc97779b4bbae77c17e714ee241cbd493f084f300fb7b",
+      "best_checkpoint_sha256": "ea347f9ae83659cac45c25343f21de4e92cdece0bd516af6dd0c2600fc5d8907",
+      "training_seconds_this_invocation": 28.840390503872186,
+      "peak_training_gpu_bytes": 2667008000,
+      "last_epoch": {
+        "epoch": 0,
+        "train_loss": 1.0133015513420105,
+        "validation_rsat": 1.3013131088680692,
+        "best_rsat": 1.3013131088680692,
+        "updates": 45,
+        "trained_events": 3600000,
+        "dropped_tail_events": 0,
+        "seconds": 27.706964020151645
+      }
+    },
+    "voxel5": {
+      "status": "completed",
+      "kind": "smoke_only",
+      "model": {
+        "name": "EVFlowNet",
+        "encoding": "voxel",
+        "num_bins": 5,
+        "base_num_channels": 32,
+        "kernel_size": 3,
+        "norm_input": false,
+        "mask_output": true,
+        "activations": [
+          "relu",
+          null
+        ],
+        "spiking_neuron": null
+      },
+      "seed": 0,
+      "epochs": 1,
+      "config_sha256": "cdac770e4589cc6766c1eeec25cc33a8b742947d036713e1487b0e905df05769",
+      "training_manifest_sha256": "340e85dc8f34b7b7993fc97779b4bbae77c17e714ee241cbd493f084f300fb7b",
+      "best_checkpoint_sha256": "2fb6e11bd80e2a0d06f1ca27838186fc9e1d5ab03cdd84b076995c15cc5fe8b0",
+      "training_seconds_this_invocation": 39.90255754068494,
+      "peak_training_gpu_bytes": 2676579840,
+      "last_epoch": {
+        "epoch": 0,
+        "train_loss": 0.9542780359586079,
+        "validation_rsat": 1.1239324013392131,
+        "best_rsat": 1.1239324013392131,
+        "updates": 45,
+        "trained_events": 3600000,
+        "dropped_tail_events": 0,
+        "seconds": 33.22495038434863
+      }
+    }
+  }
+}

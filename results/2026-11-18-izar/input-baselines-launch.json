@@ -1,0 +1,166 @@
+{
+  "job_id": 3256757,
+  "status_at_capture": "training_started",
+  "protocol": "matched-v1",
+  "train_crops": 116,
+  "validation_crops": 24,
+  "epochs": 100,
+  "seed": 0,
+  "expected_updates_per_epoch": 675,
+  "expected_training_events_per_epoch": 52200000,
+  "automatic_test": {
+    "dataset": "mvsec",
+    "sequences": [
+      "outdoor_day1",
+      "indoor_flying1",
+      "indoor_flying2",
+      "indoor_flying3"
+    ],
+    "dt": [
+      1,
+      4
+    ],
+    "checkpoint": "best.pt",
+    "selection": "UZH validation RSAT only"
+  },
+  "slurm_accounting_at_capture": [
+    "3256757_0       RUNNING   00:00:32      0:0 ",
+    "3256757_1       RUNNING   00:00:32      0:0"
+  ],
+  "runs": [
+    {
+      "array_task": 0,
+      "condition": "count",
+      "run_directory": "runs/input-baselines-3256757/count",
+      "config": {
+        "protocol": "matched-v1",
+        "seed": 0,
+        "device": "cuda",
+        "data": {
+          "dataset": "uzh_fpv",
+          "manifest": "runs/setup/uzh-matched.json",
+          "resolution": [
+            128,
+            128
+          ]
+        },
+        "model": {
+          "name": "EVFlowNet",
+          "encoding": "cnt",
+          "num_bins": 2,
+          "base_num_channels": 32,
+          "kernel_size": 3,
+          "norm_input": false,
+          "mask_output": true,
+          "activations": [
+            "relu",
+            null
+          ],
+          "spiking_neuron": null
+        },
+        "window": {
+          "stride_events": 1000,
+          "history_events": 1000,
+          "loss_events": 10000,
+          "eval_events": 50000,
+          "warmup_events": 50000
+        },
+        "train": {
+          "epochs": 100,
+          "batch_size": 8,
+          "lr": 0.0002,
+          "clip_grad": 100.0,
+          "smooth_weight": 0.001,
+          "augment": true
+        },
+        "eval": {
+          "mode": "events",
+          "flow_scale": 128.0,
+          "outlier_reference": "gt",
+          "mask_channel": 0
+        }
+      },
+      "config_sha256": "0efa6a407f2874f1652305ce96d046dbb9bc01adb2a095a5f513d5195227de95",
+      "training_manifest_sha256": "683adb3f4aaaa40b1dda03a31ca216ba3ef29c7f411ac47fd1f8391e462241ab",
+      "project_revision": "a0f485f5521474ff4b1da4245439991ea24cb95f",
+      "git_dirty_at_start": false,
+      "torch": "2.5.1+cu121",
+      "gpu": "Tesla V100-PCIE-32GB",
+      "latest_training_progress": {
+        "phase": "training",
+        "epoch": 0,
+        "updates": 1,
+        "last_loss": 1.2683112621307373,
+        "trained_events": 80000,
+        "seconds": 2.957377774640918
+      }
+    },
+    {
+      "array_task": 1,
+      "condition": "voxel5",
+      "run_directory": "runs/input-baselines-3256757/voxel5",
+      "config": {
+        "protocol": "matched-v1",
+        "seed": 0,
+        "device": "cuda",
+        "data": {
+          "dataset": "uzh_fpv",
+          "manifest": "runs/setup/uzh-matched.json",
+          "resolution": [
+            128,
+            128
+          ]
+        },
+        "model": {
+          "name": "EVFlowNet",
+          "encoding": "voxel",
+          "num_bins": 5,
+          "base_num_channels": 32,
+          "kernel_size": 3,
+          "norm_input": false,
+          "mask_output": true,
+          "activations": [
+            "relu",
+            null
+          ],
+          "spiking_neuron": null
+        },
+        "window": {
+          "stride_events": 1000,
+          "history_events": 1000,
+          "loss_events": 10000,
+          "eval_events": 50000,
+          "warmup_events": 50000
+        },
+        "train": {
+          "epochs": 100,
+          "batch_size": 8,
+          "lr": 0.0002,
+          "clip_grad": 100.0,
+          "smooth_weight": 0.001,
+          "augment": true
+        },
+        "eval": {
+          "mode": "events",
+          "flow_scale": 128.0,
+          "outlier_reference": "gt",
+          "mask_channel": 0
+        }
+      },
+      "config_sha256": "e9069fa7cb5d42edef61035e5b6620376500e306bc0e023052ac4d2cdd461016",
+      "training_manifest_sha256": "683adb3f4aaaa40b1dda03a31ca216ba3ef29c7f411ac47fd1f8391e462241ab",
+      "project_revision": "a0f485f5521474ff4b1da4245439991ea24cb95f",
+      "git_dirty_at_start": false,
+      "torch": "2.5.1+cu121",
+      "gpu": "Tesla V100-PCIE-32GB",
+      "latest_training_progress": {
+        "phase": "training",
+        "epoch": 0,
+        "updates": 1,
+        "last_loss": 1.2641252279281616,
+        "trained_events": 80000,
+        "seconds": 3.2337836883962154
+      }
+    }
+  ]
+}
