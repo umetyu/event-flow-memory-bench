@@ -1,0 +1,390 @@
+{
+  "generated_utc": "2026-11-18T12:07:20.332696+00:00",
+  "protocol": "gt-aligned-1k-qualitative-v1",
+  "job_id": 3256861,
+  "inference_settings": {
+    "history_events": 1000,
+    "stride_events": 1000,
+    "sequence_reset": "at sequence start",
+    "state_warmup": "entire prefix from event 0",
+    "hot_pixel_filter": false,
+    "flow_scale": 128,
+    "displacement_formula": "network_output * 128 * GT_duration / full_1k_input_duration",
+    "chunk_alignment": "full nonoverlapping 1k chunks ending at selected GT endpoint; only first warmup chunk may be short",
+    "temporal_assumption": "final-input average velocity held constant over GT interval"
+  },
+  "sampling": {
+    "rule": "first GT interval whose start event index >= anchor",
+    "anchor_events": 500000,
+    "chosen_using_predictions": false
+  },
+  "upstream_revision": "e81f9630a145da8c7e57b2cfd38cf6c0b47ac14f",
+  "script_sha256": "7bb7aebbb8fd8869c34b7b8e80ffd9ce35c323ddc392f047370c2a3e87f7cda8",
+  "torch": "2.5.1+cu121",
+  "gpu": "Tesla V100-PCIE-32GB",
+  "inference_seconds": 54.3407206684351,
+  "limitations": [
+    "Voxel checkpoint is from an unfinished training run, not final accuracy.",
+    "Author ConvGRU and voxel5 differ in training data split/conditions.",
+    "GT-aligned full 1k input inference differs from Table 1 reproduction and generic matched-v1 GT-boundary partial strides.",
+    "AEE labels are per selected interval, not full-sequence averages."
+  ],
+  "render_provenance": {
+    "script_sha256": "1a799e7a9277f2c3efb60d059247145f61a82e3c1f3a1091418c6a05cf75d2d4",
+    "matplotlib": "3.10.9",
+    "numpy": "1.26.4",
+    "python": "3.10.22",
+    "change_from_inference_script": "Figure spacing only; prediction arrays unchanged."
+  },
+  "artifact_sha256": {
+    "flow-comparison-dt1.png": "186947b9dba3c3139e8779ecc9e9200def162cf6cf9dbf00e35a93c93d3a3936",
+    "flow-comparison-dt4.png": "d6c8925498012b303b6952cac90bfa82a386b07c468ea26387bc2327a7dda51b",
+    "flow-detail-indoor_flying2-dt1.png": "51575c1f14c660e5d7301a20e4bffdd5087348193778d49531d42b7aaf95c7e9",
+    "flow-detail-indoor_flying2-dt4.png": "c30b688e536f64500db61c6f1d9920c61009a474916b2863fb47c7c28e61d28f",
+    "flow-comparison-dt1.svg": "93fe106d7a627a64eacbe3959e91185ce7e57c2898dd6831feb39144c2acdcd7",
+    "flow-comparison-dt4.svg": "f631767744d783a3e507765f33c1daf9cfec4a1644860aff8b8ba881cc93ac5e",
+    "flow-detail-indoor_flying2-dt1.svg": "4f3520cb36cc4382a15a89cd0e67bc1d5ac283cabef1a07e317574e3cfcfc392",
+    "flow-detail-indoor_flying2-dt4.svg": "820954008b31b5f9340529104b7814c89e0d9659a6eb6750d8b3ac7101d7ba56",
+    "inference-script.py": "7bb7aebbb8fd8869c34b7b8e80ffd9ce35c323ddc392f047370c2a3e87f7cda8",
+    "render-script.py": "1a799e7a9277f2c3efb60d059247145f61a82e3c1f3a1091418c6a05cf75d2d4",
+    "flow_visualization.py": "2ae13036811d487fae76c436aec07fa0756c65136854c702723a2a811d68aac3"
+  },
+  "verification": {
+    "unit_tests": 5,
+    "unit_tests_passed": true,
+    "npz_and_array_hashes_verified": 8,
+    "input_events_verified": 1000,
+    "same_gt_and_event_mask_verified": true,
+    "aee_independently_recomputed_examples": 8,
+    "aee_absolute_tolerance_px": 1e-05,
+    "figures_visually_inspected": true
+  },
+  "author_checkpoint": {
+    "sha256": "5adb204b675a556cd292661236c45f742c2d629b9e04e3859ee482004bb0d8fe",
+    "model": "RecEVFlowNet"
+  },
+  "voxel_checkpoint": {
+    "sha256": "35977e8f30ab4c436e08cf70efad996e8038b4cf20c6fd1432b806c887e98dba",
+    "epoch_zero_based": 13,
+    "epochs_completed_at_checkpoint": 14,
+    "training_complete": false,
+    "planned_epochs": 100,
+    "best_validation_rsat": 0.952258259333946,
+    "training_manifest_sha256": "683adb3f4aaaa40b1dda03a31ca216ba3ef29c7f411ac47fd1f8391e462241ab",
+    "label": "epoch 14/100, validation-best snapshot",
+    "model": {
+      "name": "EVFlowNet",
+      "encoding": "voxel",
+      "num_bins": 5,
+      "base_num_channels": 32,
+      "kernel_size": 3,
+      "norm_input": false,
+      "mask_output": true,
+      "activations": [
+        "relu",
+        null
+      ],
+      "spiking_neuron": null
+    }
+  },
+  "examples": [
+    {
+      "sequence": "outdoor_day1",
+      "dt": 1,
+      "gt_interval_index": 74,
+      "timestamp_start": 1506118120.8462565,
+      "timestamp_end": 1506118120.8682165,
+      "event_time_origin": 1506118119.1955414,
+      "relative_start_seconds": 1.6507151126861572,
+      "relative_end_seconds": 1.6726751327514648,
+      "start_event": 503693,
+      "end_event": 509636,
+      "history_start_event": 508636,
+      "final_stride_start_event": 508636,
+      "input_events": 1000,
+      "initial_warmup_chunk_events": 636,
+      "input_seconds": 0.004332065582275391,
+      "gt_seconds": 0.021960020065307617,
+      "convgru_metrics": {
+        "aee": 0.821584939956665,
+        "outlier_pct": 0.23011176857330704,
+        "valid_pixels": 3042
+      },
+      "voxel5_metrics": {
+        "aee": 2.2138631343841553,
+        "outlier_pct": 22.189349112426036,
+        "valid_pixels": 3042
+      },
+      "color_max_px": 5.0,
+      "saturated_fraction": {
+        "gt_flow": 0.0,
+        "convgru_flow": 0.0,
+        "voxel5_flow": 0.0381328073635766
+      },
+      "arrays_file": "outdoor_day1-dt1.npz",
+      "npz_sha256": "848623bba51381101f0d82b58130d4bb363d9234d065dd1f7906e1f12ba5b3b6",
+      "anchor_events": 500000
+    },
+    {
+      "sequence": "indoor_flying1",
+      "dt": 1,
+      "gt_interval_index": 148,
+      "timestamp_start": 1504645182.1961334,
+      "timestamp_end": 1504645182.2279923,
+      "event_time_origin": 1504645177.4254112,
+      "relative_start_seconds": 4.770722150802612,
+      "relative_end_seconds": 4.802581071853638,
+      "start_event": 500035,
+      "end_event": 506456,
+      "history_start_event": 505456,
+      "final_stride_start_event": 505456,
+      "input_events": 1000,
+      "initial_warmup_chunk_events": 456,
+      "input_seconds": 0.005827903747558594,
+      "gt_seconds": 0.03185892105102539,
+      "convgru_metrics": {
+        "aee": 1.9430969953536987,
+        "outlier_pct": 7.6827242524916945,
+        "valid_pixels": 2408
+      },
+      "voxel5_metrics": {
+        "aee": 2.459545612335205,
+        "outlier_pct": 21.511627906976745,
+        "valid_pixels": 2408
+      },
+      "color_max_px": 5.0,
+      "saturated_fraction": {
+        "gt_flow": 0.0,
+        "convgru_flow": 0.0004152823920265781,
+        "voxel5_flow": 0.012458471760797342
+      },
+      "arrays_file": "indoor_flying1-dt1.npz",
+      "npz_sha256": "394a3b7f500af3ccf10c83946fc102385c38c5d8d6722abeeedf3f9254723ef0",
+      "anchor_events": 500000
+    },
+    {
+      "sequence": "indoor_flying2",
+      "dt": 1,
+      "gt_interval_index": 287,
+      "timestamp_start": 1504645276.9140253,
+      "timestamp_end": 1504645276.9458842,
+      "event_time_origin": 1504645267.7161982,
+      "relative_start_seconds": 9.197827100753784,
+      "relative_end_seconds": 9.22968602180481,
+      "start_event": 509809,
+      "end_event": 527460,
+      "history_start_event": 526460,
+      "final_stride_start_event": 526460,
+      "input_events": 1000,
+      "initial_warmup_chunk_events": 460,
+      "input_seconds": 0.002218008041381836,
+      "gt_seconds": 0.03185892105102539,
+      "convgru_metrics": {
+        "aee": 4.334060192108154,
+        "outlier_pct": 69.8952380952381,
+        "valid_pixels": 10500
+      },
+      "voxel5_metrics": {
+        "aee": 7.841206073760986,
+        "outlier_pct": 99.21904761904761,
+        "valid_pixels": 10500
+      },
+      "color_max_px": 5.0,
+      "saturated_fraction": {
+        "gt_flow": 0.014380952380952381,
+        "convgru_flow": 0.33514285714285713,
+        "voxel5_flow": 0.8201904761904761
+      },
+      "arrays_file": "indoor_flying2-dt1.npz",
+      "npz_sha256": "db6a61b375feb5b05604db1d708da2ed3b42e4d551b0fe2dc47e1eb2b4f2d664",
+      "anchor_events": 500000
+    },
+    {
+      "sequence": "indoor_flying3",
+      "dt": 1,
+      "gt_interval_index": 226,
+      "timestamp_start": 1504645450.3245492,
+      "timestamp_end": 1504645450.3564093,
+      "event_time_origin": 1504645443.0855954,
+      "relative_start_seconds": 7.2389538288116455,
+      "relative_end_seconds": 7.270813941955566,
+      "start_event": 504034,
+      "end_event": 514347,
+      "history_start_event": 513347,
+      "final_stride_start_event": 513347,
+      "input_events": 1000,
+      "initial_warmup_chunk_events": 347,
+      "input_seconds": 0.0030241012573242188,
+      "gt_seconds": 0.0318601131439209,
+      "convgru_metrics": {
+        "aee": 2.9799633026123047,
+        "outlier_pct": 36.16266698191276,
+        "valid_pixels": 8459
+      },
+      "voxel5_metrics": {
+        "aee": 5.889973163604736,
+        "outlier_pct": 93.95909681995508,
+        "valid_pixels": 8459
+      },
+      "color_max_px": 5.0,
+      "saturated_fraction": {
+        "gt_flow": 0.0,
+        "convgru_flow": 0.09599243409386453,
+        "voxel5_flow": 0.5213382196477125
+      },
+      "arrays_file": "indoor_flying3-dt1.npz",
+      "npz_sha256": "aa86a46531c8d110f87d5ab690af8abd86b035bca8d324833a1a6277552a643a",
+      "anchor_events": 500000
+    },
+    {
+      "sequence": "outdoor_day1",
+      "dt": 4,
+      "gt_interval_index": 18,
+      "timestamp_start": 1506118120.8682165,
+      "timestamp_end": 1506118120.9560535,
+      "event_time_origin": 1506118119.1955414,
+      "relative_start_seconds": 1.6726751327514648,
+      "relative_end_seconds": 1.760512113571167,
+      "start_event": 509636,
+      "end_event": 525925,
+      "history_start_event": 524925,
+      "final_stride_start_event": 524925,
+      "input_events": 1000,
+      "initial_warmup_chunk_events": 925,
+      "input_seconds": 0.007682085037231445,
+      "gt_seconds": 0.08783698081970215,
+      "convgru_metrics": {
+        "aee": 2.0481369495391846,
+        "outlier_pct": 19.40715883668904,
+        "valid_pixels": 5364
+      },
+      "voxel5_metrics": {
+        "aee": 5.730010032653809,
+        "outlier_pct": 83.07233407904549,
+        "valid_pixels": 5364
+      },
+      "color_max_px": 20.0,
+      "saturated_fraction": {
+        "gt_flow": 0.0,
+        "convgru_flow": 0.0,
+        "voxel5_flow": 0.0016778523489932886
+      },
+      "arrays_file": "outdoor_day1-dt4.npz",
+      "npz_sha256": "902a76e8624ef2da59557a09cd759d629dadffed66ec8c681c7f379fa17ef916",
+      "anchor_events": 500000
+    },
+    {
+      "sequence": "indoor_flying1",
+      "dt": 4,
+      "gt_interval_index": 37,
+      "timestamp_start": 1504645182.2917113,
+      "timestamp_end": 1504645182.4191482,
+      "event_time_origin": 1504645177.4254112,
+      "relative_start_seconds": 4.866300106048584,
+      "relative_end_seconds": 4.993736982345581,
+      "start_event": 518202,
+      "end_event": 542371,
+      "history_start_event": 541371,
+      "final_stride_start_event": 541371,
+      "input_events": 1000,
+      "initial_warmup_chunk_events": 371,
+      "input_seconds": 0.006695985794067383,
+      "gt_seconds": 0.12743687629699707,
+      "convgru_metrics": {
+        "aee": 5.504622459411621,
+        "outlier_pct": 87.0076556085654,
+        "valid_pixels": 9013
+      },
+      "voxel5_metrics": {
+        "aee": 7.645019054412842,
+        "outlier_pct": 97.25951403528236,
+        "valid_pixels": 9013
+      },
+      "color_max_px": 20.0,
+      "saturated_fraction": {
+        "gt_flow": 0.0,
+        "convgru_flow": 0.0004438033950959725,
+        "voxel5_flow": 0.007322756019083546
+      },
+      "arrays_file": "indoor_flying1-dt4.npz",
+      "npz_sha256": "d9ee2efadaaa92ded3786b5155dd14d8c1f4624a4006fc110bcb52baf0de2384",
+      "anchor_events": 500000
+    },
+    {
+      "sequence": "indoor_flying2",
+      "dt": 4,
+      "gt_interval_index": 71,
+      "timestamp_start": 1504645276.9140253,
+      "timestamp_end": 1504645277.0414624,
+      "event_time_origin": 1504645267.7161982,
+      "relative_start_seconds": 9.197827100753784,
+      "relative_end_seconds": 9.32526421546936,
+      "start_event": 509809,
+      "end_event": 585095,
+      "history_start_event": 584095,
+      "final_stride_start_event": 584095,
+      "input_events": 1000,
+      "initial_warmup_chunk_events": 95,
+      "input_seconds": 0.0013148784637451172,
+      "gt_seconds": 0.12743711471557617,
+      "convgru_metrics": {
+        "aee": 26.865617752075195,
+        "outlier_pct": 98.48811105511523,
+        "valid_pixels": 21827
+      },
+      "voxel5_metrics": {
+        "aee": 45.581626892089844,
+        "outlier_pct": 99.96792962844184,
+        "valid_pixels": 21827
+      },
+      "color_max_px": 20.0,
+      "saturated_fraction": {
+        "gt_flow": 0.0006872222476748981,
+        "convgru_flow": 0.5318183900673478,
+        "voxel5_flow": 0.9403032940853072
+      },
+      "arrays_file": "indoor_flying2-dt4.npz",
+      "npz_sha256": "42dd2d8572815b5b06fc2b84d620b4298fee905dc324269edae63dce5b1f594f",
+      "anchor_events": 500000
+    },
+    {
+      "sequence": "indoor_flying3",
+      "dt": 4,
+      "gt_interval_index": 56,
+      "timestamp_start": 1504645450.3564093,
+      "timestamp_end": 1504645450.4838462,
+      "event_time_origin": 1504645443.0855954,
+      "relative_start_seconds": 7.270813941955566,
+      "relative_end_seconds": 7.3982508182525635,
+      "start_event": 514347,
+      "end_event": 546337,
+      "history_start_event": 545337,
+      "final_stride_start_event": 545337,
+      "input_events": 1000,
+      "initial_warmup_chunk_events": 337,
+      "input_seconds": 0.004292964935302734,
+      "gt_seconds": 0.12743687629699707,
+      "convgru_metrics": {
+        "aee": 11.230953216552734,
+        "outlier_pct": 99.49793795947642,
+        "valid_pixels": 16731
+      },
+      "voxel5_metrics": {
+        "aee": 16.034109115600586,
+        "outlier_pct": 99.80873827027673,
+        "valid_pixels": 16731
+      },
+      "color_max_px": 20.0,
+      "saturated_fraction": {
+        "gt_flow": 0.0,
+        "convgru_flow": 0.03048233817464587,
+        "voxel5_flow": 0.21062697985774909
+      },
+      "arrays_file": "indoor_flying3-dt4.npz",
+      "npz_sha256": "a44d53ad2c2c6d1f7945fbe596039913dbb81c64206dc55a870fec7ec580f3fa",
+      "anchor_events": 500000
+    }
+  ],
+  "artifact_location": "Izar: event-flow-memory-bench/runs/flow-figures-3256861; final layout and metadata also saved with delivered local artifacts. Weights and raw arrays are not committed.",
+  "scope": "Only ConvGRU RecEVFlowNet and feedforward EVFlowNet voxel5, compared with GT; no Leaky/RNN/FireNet panels."
+}

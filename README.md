@@ -16,6 +16,8 @@ Izar上の著者配布UZH/MVSECを検査し、FireNet / RecEVFlowNetの学習速
 
 同日に非再帰EVFlowNetのcount / voxel5を **3256757_0 / 3256757_1** で学習開始しました。両方seed 0・100 epochs、同じUZH分割・1k入力・10k損失窓で、終了後にMVSEC dt1/dt4を自動評価します。[開始時点の実行記録](results/2026-11-18-izar/input-baselines-launch.json)。事前に[実データ45更新ずつ・検証・GPUメモリの確認](results/2026-11-18-izar/input-baselines-smoke.json)を通過しました。これは学習完了や精度向上を示す記録ではありません。
 
+著者ConvGRUと学習途中のvoxel5（14/100 epoch）の推定フローを、同じMVSEC区間のGTと並べる[可視化スクリプトと生成手順](docs/FLOW_FIGURES.md)を追加しました。4収録×dt1/dt4、入力はGT終端に揃えた完全な1kイベント窓です。[実行・検証記録](results/2026-11-18-izar/flow-figures.json)。学習完了後の定量比較やTable 1再現結果とは区別します。
+
 ## 実装済み
 
 Gallego 2018のパッチCMax再実装と、Shiba et al. 2022の公式CMaxソルバーを追加しました。学習不要の2手法を、因果的な1k窓と長い窓でMVSEC評価します。Izar `3256789 / 3256790` で全32条件の評価を開始し、終了後は `3256791` で比較表を集計します。[実行条件・原論文との差分](docs/CMAX.md)と[開始時点の記録](results/2026-11-18-izar/cmax-launch.json)。全評価はまだ完了していません。
