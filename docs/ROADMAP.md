@@ -7,7 +7,7 @@
 | 0: 環境・データ | HDF5検査、split、出典固定 | データ取得、元記録group、GPUを確認 |
 | 1: 論文再現 | 重み読込、dt1/dt4、表との差分 | RecEVFlowNet / FireNetの4系列の再現 |
 | 2: pilot | 5条件 × 3 seeds | FireNet系の収束・評価 |
-| 3: 主対照 | 5条件 × 3 seeds | UZH → MVSECの全条件表 |
+| 3: 主対照 | 既存5条件 × 3 seeds。[56]のUZH再学習を追加対象に採用、実装は未完了 | [56]を含むUZH → MVSECの全条件表 |
 | 4: 履歴 | 4履歴 × 5条件 × 3 seeds | 固定anchorで曲線作成 |
 | 5: AffineObjects | 共通proxy、LayerSeg、mask評価 | 同一窓のFWL/RSAT、IoU/DR |
 | 6: SNN | 8モデルの設定・読込 | 必要なモデルの再現・比較 |
@@ -15,7 +15,7 @@
 
 jobs.jsonは実行順序を保持し、run_grid.pyは失敗時に停止します。latest.ptはepoch境界の再開用、best.ptは検証RSATで選択した評価用です。
 
-現在の実行対象はStep 2の5条件とFireNet系の先行確認です。全14モデル・SNN一括学習は行いません。
+現在の主比較対象は表の2・4・5・6行目で、[56]も同じUZHで再学習します。生成済みgridは既存5条件で、[56]は実装待ちです。[対象と状態](BASELINES.md)。FireNet系を先行確認に使い、全14モデル・SNN一括学習は行いません。
 
 実施済み: 既存の著者UZH/MVSECの検査、記録単位split生成、著者配布2モデルの重み取得、V100上でのFireNet / RecEVFlowNetの短時間学習速度計測。[詳細](IZAR.md)。
 

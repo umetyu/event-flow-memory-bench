@@ -4,7 +4,9 @@
 
 主ベースラインはConvGRU版 **`RecEVFlowNet`**。対照に非再帰`EVFlowNet`のcount / 5-bin voxel、RNN / Leakyのcountを使います。まず同じ組のFireNet系で動作を確認します。論文で「EV-FlowNet」と呼ばれる再帰モデルは、コードでは`RecEVFlowNet`です。
 
-現在の実行対象はStep 2の5条件（EVFlowNet count / voxel、RecEVFlowNet / RNNRecEVFlowNet / LeakyRecEVFlowNet count）と先行確認用FireNet系です。14モデル一括・SNN実験は実行しません。Hebbian更新則自体は未実装です。
+主比較の対象はTable 1の**2・4・5・6行目**、すなわちEV-FlowNet* [56]（Zhu 2019）、RecEVFlowNet、RNNRecEVFlowNet、LeakyRecEVFlowNetです。**[56]も同じUZHで再学習してMVSECで評価**する方針です。既存の非再帰count / 5-bin voxelは要因切り分け用の追加対照であり、[56]の実装とは区別します。[対象・実装状況](docs/BASELINES.md)。
+
+現在生成・実行できるmain gridは従来の5条件です。[56]は比較対象に追加済みですが、実装と重みの同定は未完了のため、この5条件にはまだ含めていません。先行確認用FireNet系を維持し、14モデル一括・SNN実験は実行しません。Hebbian更新則自体は未実装です。
 
 Izar上の著者配布UZH/MVSECを検査し、FireNet / RecEVFlowNetの学習速度を実測済みです。100 epoch・1 seedの推定は約7.0 / 13.5時間。[GPU実行手順と測定条件](docs/IZAR.md)を参照してください。`demo`は合成データによる実装検証です。
 
@@ -81,7 +83,7 @@ efbench grid --stage main --manifest data/uzh.json --output configs/generated/ma
 python scripts/run_grid.py configs/generated/main/jobs.json
 ```
 
-各stageは5モデル条件 × 3 seeds = 15 runs。生成YAMLを確認し、batch sizeなどの変更は条件間で揃えて記録します。RNNRecEVFlowNetの元設定にはlr=5e-5の注記がありますが、統一比較は全モデル2e-4から始めます。探索はUZH検証側でのみ行います。
+現在の各stageは5モデル条件 × 3 seeds = 15 runs。[56]のUZH再学習は実装待ちで、この生成済みgridには含まれません。生成YAMLを確認し、batch sizeなどの変更は条件間で揃えて記録します。RNNRecEVFlowNetの元設定にはlr=5e-5の注記がありますが、統一比較は全モデル2e-4から始めます。探索はUZH検証側でのみ行います。
 
 ```bash
 # 単一モデルを実行・再開
@@ -127,6 +129,7 @@ python scripts/run_grid.py configs/generated/affine-layerseg/jobs.json
 
 ## 設計・状況
 
+- [選択したベースラインとZhu 2019 [56]の位置づけ](docs/BASELINES.md)
 - [条件・単位・既知の限界](docs/PROTOCOL.md)
 - [データ書式・入手先](docs/DATA.md)
 - [実施順序・完了条件](docs/ROADMAP.md)

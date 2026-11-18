@@ -16,6 +16,13 @@ The wrapper isolates mutable class-level neuron kwargs between instances. Matche
 
 configs/paper_reference.csv transcribes RecEVFlowNet (paper label EV-FlowNet) and FireNet from Table 1, page 8. These are reference targets, not results from this project.
 
+## Zhu et al., CVPR 2019 (reference [56] in Hagenaars)
+
+- [Paper](https://openaccess.thecvf.com/content_CVPR_2019/html/Zhu_Unsupervised_Event-Based_Learning_of_Optical_Flow_Depth_and_Egomotion_CVPR_2019_paper.html)
+- [Author preprint, sections 3 and 4](https://arxiv.org/html/1812.08156)
+
+Selected for retraining on the same UZH split. A verified implementation/checkpoint is not yet integrated. `configs/literature/zhu2019_table1.csv` contains published reference values, not project measurements. Native training uses MVSEC outdoor_day2 and 9-bin volumes. The author's RSS 2018 EV-FlowNet repository and this project's Hagenaars 5-bin voxel control must not be relabeled as the CVPR 2019 method. See [BASELINES.md](docs/BASELINES.md).
+
 ## EV-LayerSegNet, Farah et al., CVPR Workshops 2025
 
 - [Paper](https://arxiv.org/abs/2506.06596)

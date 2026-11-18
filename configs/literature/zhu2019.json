@@ -1,0 +1,39 @@
+{
+  "protocol": "non-executable-literature-spec",
+  "baseline_id": "zhu2019",
+  "paper_label": "EV-FlowNet* [56]",
+  "hagenaars_table1_row": 2,
+  "selected": true,
+  "execution_status": "implementation_not_verified",
+  "verified_implementation": null,
+  "verified_checkpoint": null,
+  "paper_url": "https://openaccess.thecvf.com/content_CVPR_2019/html/Zhu_Unsupervised_Event-Based_Learning_of_Optical_Flow_Depth_and_Egomotion_CVPR_2019_paper.html",
+  "settings_source": "https://arxiv.org/html/1812.08156",
+  "published": {
+    "training_dataset": "mvsec",
+    "training_recording": "outdoor_day2",
+    "encoding": "signed_voxel_linear_interpolation",
+    "num_bins": 9,
+    "training_events_per_input": 30000,
+    "resolution": [256, 256],
+    "evaluation_events_outdoor": 30000,
+    "evaluation_events_indoor": 15000,
+    "native_output_unit": "pixels_per_bin",
+    "outlier_definition": "EPE > 3 pixels",
+    "table": "zhu2019_table1.csv",
+    "result_kind": "published_reference_not_reproduced"
+  },
+  "planned_experiment": {
+    "id": "zhu2019-uzh",
+    "training_dataset": "uzh_fpv",
+    "split": "same recording-level split as other Step 2 baselines",
+    "evaluation_dataset": "mvsec",
+    "evaluation_sequences": ["outdoor_day1", "indoor_flying1", "indoor_flying2", "indoor_flying3"],
+    "evaluation_dt": [1, 4],
+    "model_selection": "UZH validation only",
+    "require_matched_scoring": true,
+    "training_config": null,
+    "checkpoint": null
+  },
+  "not_equivalent_to": ["Hagenaars EVFlowNet with 5-bin voxel input", "RSS 2018 EV-FlowNet [54]"]
+}

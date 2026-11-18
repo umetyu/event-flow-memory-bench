@@ -1,0 +1,9 @@
+baseline_id,result_kind,training_dataset,training_recording,dt,sequence,aee,outlier_pct,outlier_definition
+zhu2019,published_reference_not_reproduced,mvsec,outdoor_day2,1,outdoor_day1,0.32,0.0,EPE>3px
+zhu2019,published_reference_not_reproduced,mvsec,outdoor_day2,1,indoor_flying1,0.58,0.0,EPE>3px
+zhu2019,published_reference_not_reproduced,mvsec,outdoor_day2,1,indoor_flying2,1.02,4.0,EPE>3px
+zhu2019,published_reference_not_reproduced,mvsec,outdoor_day2,1,indoor_flying3,0.87,3.0,EPE>3px
+zhu2019,published_reference_not_reproduced,mvsec,outdoor_day2,4,outdoor_day1,1.30,9.7,EPE>3px
+zhu2019,published_reference_not_reproduced,mvsec,outdoor_day2,4,indoor_flying1,2.18,24.2,EPE>3px
+zhu2019,published_reference_not_reproduced,mvsec,outdoor_day2,4,indoor_flying2,3.85,46.8,EPE>3px
+zhu2019,published_reference_not_reproduced,mvsec,outdoor_day2,4,indoor_flying3,3.18,47.8,EPE>3px

@@ -19,6 +19,8 @@
 
 主実験はUZH-FPV学習・検証、MVSECテスト。元記録groupで検証を分け、近接・重複クロップの漏洩を防ぎます。元記録対応が不明なら厳密なgroup splitは未確定です。ファイル単位のランダム分割を独立検証と主張しません。
 
+[56]（Zhu 2019）もUZHで再学習する比較対象に追加しました。原論文はMVSEC outdoor_day2で学習しており、その参考値は`configs/literature`に分離します。現状の5-bin voxel対照は[56]の再実装ではありません。[56]の実装・原損失・出力単位を検証し、同じUZH splitとMVSEC採点規約で実行できるまで、既存gridにその名前で追加しません。[詳細](BASELINES.md)。
+
 5条件: 非再帰count、非再帰voxel、Leaky count、RNN count、ConvGRU count。FireNet系の非再帰版はFireFlowNetです。countにも現在partition内の複数イベントが入っています。「過去なし」は過去partitionを追加しない意味です。5-bin voxelにするだけでは履歴は長くなりません。時間順序の符号化と履歴長は別要因です。
 
 履歴sweepは1k/5k/15k/50k。stride=1k、loss=10k、proxy評価=50kを固定し、共通50k warmup後の同じanchorで採点します。再帰状態の記憶時間は入力履歴の制限を受けません。モデル間ではパラメータ数も異なり、厳密な同容量比較ではありません。
