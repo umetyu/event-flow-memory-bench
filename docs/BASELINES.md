@@ -4,7 +4,8 @@
 
 | 用途 | 行 | 論文の表記 | この基盤での識別 | 状態 |
 |---|---:|---|---|---|
-| 主比較 | 2 | EV-FlowNet* [56] | zhu2019-uzh（UZHで再学習 → MVSEC） | 採用済み。実装・重みの同定は未完了、未学習 |
+| 論文報告値による参考比較 | 2 | EV-FlowNet* [56] | zhu2019 / published_reference_not_reproduced | 8条件の報告値を収録済み。当プロジェクトで推論した値ではない |
+| 追加の再学習比較 | 2と同じ手法 | EV-FlowNet* [56] | zhu2019-uzh（再実装 → UZH学習 → MVSEC評価） | 採用済み。実装未完了、学習ジョブ未投入 |
 | 主比較 | 4 | EV-FlowNet | RecEVFlowNet / count | 実装済み。配布重み評価済み |
 | 主比較 | 5 | RNN-EV-FlowNet | RNNRecEVFlowNet / count | 実装済み、未学習 |
 | 主比較 | 6 | Leaky-EV-FlowNet | LeakyRecEVFlowNet / count | 実装済み、未学習 |
@@ -12,13 +13,22 @@
 | 軽量な先行確認 | 12 | RNN-FireNet | RNNFireNet / count | 実装済み、未学習 |
 | 軽量な先行確認 | 13 | Leaky-FireNet | LeakyFireNet / count | 実装済み、未学習 |
 
-別途、同じHagenaars実装の非再帰EVFlowNetのcount / 5-bin voxelを、入力表現の要因切り分け用に使います。軽量版の対応モデルはFireFlowNetです。[56]をこの既存voxelモデルの別名として扱いません。
+今回追加で再学習するのは[56]のみです。他モデルは既報値・配布済み重みでの比較を先行し、既存の5条件 × 3 seedsの学習gridはこの段階では投入しません。「未学習」は本基盤で再学習していない意味です。
 
-## [56]もUZHで学習する理由
+別途、後続の要因比較用に同じHagenaars実装の非再帰EVFlowNetのcount / 5-bin voxelを保持します。軽量版の対応モデルはFireFlowNetです。[56]をこの既存voxelモデルの別名として扱いません。
+
+## [56]の2条件
 
 [Zhu et al., CVPR 2019](https://openaccess.thecvf.com/content_CVPR_2019/html/Zhu_Unsupervised_Event-Based_Learning_of_Optical_Flow_Depth_and_Egomotion_CVPR_2019_paper.html)が[56]です。[原論文 §4.1–4.2](https://arxiv.org/html/1812.08156#S4.SS1)の学習データはMVSEC outdoor_day2であり、UZHではありません。一方、Hagenaarsの各モデルはUZHからMVSECへの評価です。そのままの論文値の差には、学習データの違いも含まれます。
 
-今回の主比較では、[56]も既存のUZH recording-level split（学習116クロップ、検証24クロップ）で再学習し、同じMVSEC 4収録・dt1/dt4で評価します。既報の重みをMVSEC学習済みのまま主比較へ混ぜません。原論文値は学習元と指標を明記した参考値として別に残します。この追加のためにoutdoor_day2をダウンロードする予定はありません。
+ユーザーの指定により、[56]は次の両方を比較します。
+
+1. **論文報告値**: MVSEC 4収録・dt1/dt4の既報8条件。学習元はMVSEC outdoor_day2。
+2. **UZH再学習版**: 既存のrecording-level split（学習116クロップ、検証24クロップ）で学習し、同じMVSEC 4収録・dt1/dt4で評価。モデル選択はUZH検証側だけで行う。
+
+2のためにoutdoor_day2をダウンロードする必要はありません。再学習版の実装差分・入力窓・crop解像度・学習量・採点規約を記録し、学習データだけを変えた完全な対照実験とは断定しません。
+
+比較表では1に「論文報告値」「学習: MVSEC outdoor_day2」を明示します。こちらでtestを実行した結果や配布重みを再評価した結果とは扱いません。報告値の要約だけから同じmask・外れ値規約へ再採点はできないため、matched-v1と同条件の優劣・seed平均・分散の計算にも含めません。2の結果は実行完了後に別ラベルで保存します。
 
 ## 原論文から確認した条件
 
@@ -34,12 +44,14 @@
 | 損失 | motion compensation後の平均timestamp画像に基づく双方向損失と空間smoothness |
 | 原論文の外れ値率 | EPEが3 pxを超える有効イベント画素の割合（本文§4.2） |
 
-Hagenaarsのactive-pixel数で正規化した損失や、既存の5-bin voxel対照と同一視しません。原法の外れ値率とmatched-v1の3px AND 5%-of-GTも区別します。主比較用には同じGT区間・event mask・外れ値規約で再採点し、原法の指標を併記する場合は別列にします。
+Hagenaarsのactive-pixel数で正規化した損失や、既存の5-bin voxel対照と同一視しません。原法の外れ値率とmatched-v1の3px AND 5%-of-GTも区別し、参考値には原論文の採点規約を保持します。
 
-## 実装の扱い
+## 保存と実行範囲
 
 今回の確認では[56]に対応する正式実装・配布重みを同定できていません。著者グループの[EV-FlowNetリポジトリ](https://github.com/daniilidis-group/EV-FlowNet)は、READMEがRSS 2018のグレースケール画像による教師信号を説明しています。これを自動的にCVPR 2019 [56]の実装として取り込むことはしません。
 
-実装を同定するか、論文に基づく再実装として差分を明示した後、9-bin入力・元の損失・出力単位を検証し、UZH用の学習設定を追加します。学習データ、crop解像度、学習量、入力窓など、原設定から変更する項目は結果に記録します。これらが未確定のまま既存EVFlowNetを[56]として実行しません。
+著者は[Issue #12の回答](https://github.com/daniilidis-group/EV-FlowNet/issues/12#issuecomment-644892449)で、当時の勤務先の制約から公開対応が難しく、独自再実装なら支援できると説明しています。現在確認できたmaster branchからCVPR 2019の正式実装・配布重みは同定できていません。
 
-[機械可読の仕様](../configs/literature/zhu2019.json)と[原論文の参考値](../configs/literature/zhu2019_table1.csv)を収録しています。後者は当プロジェクトの実測値ではなく、collect対象のresultsとは分離しています。`main` gridは現状5条件のままで、[56]を実装済みと数えません。
+再学習版は、論文に基づく再実装として差分を明示して追加します。9-bin入力、双方向timestamp損失、smoothness、出力のpixel/bin単位を検証し、既存のHagenaars損失と5-binモデルをそのまま[56]と呼ぶことはしません。現段階では実行可能な学習設定がなく、学習ジョブは未投入です。
+
+[機械可読の仕様](../configs/literature/zhu2019.json)と[原論文の参考値](../configs/literature/zhu2019_table1.csv)を収録しています。後者は当プロジェクトの実測値ではなく、collect対象のresultsとは分離しています。`main` gridは5条件のままで、未実装の[56]を学習済み・実行可能とは数えません。

@@ -21,7 +21,7 @@ configs/paper_reference.csv transcribes RecEVFlowNet (paper label EV-FlowNet) an
 - [Paper](https://openaccess.thecvf.com/content_CVPR_2019/html/Zhu_Unsupervised_Event-Based_Learning_of_Optical_Flow_Depth_and_Egomotion_CVPR_2019_paper.html)
 - [Author preprint, sections 3 and 4](https://arxiv.org/html/1812.08156)
 
-Selected for retraining on the same UZH split. A verified implementation/checkpoint is not yet integrated. `configs/literature/zhu2019_table1.csv` contains published reference values, not project measurements. Native training uses MVSEC outdoor_day2 and 9-bin volumes. The author's RSS 2018 EV-FlowNet repository and this project's Hagenaars 5-bin voxel control must not be relabeled as the CVPR 2019 method. See [BASELINES.md](docs/BASELINES.md).
+Selected for two comparisons: published results and a separate UZH-trained reimplementation. Only [56] is selected for additional retraining in the current phase. `configs/literature/zhu2019_table1.csv` contains the eight published MVSEC results, not project measurements. Native training uses MVSEC outdoor_day2 and 9-bin volumes; the original scoring convention is retained. These values remain distinct from future UZH-trained measurements. The author described release constraints in [Issue #12](https://github.com/daniilidis-group/EV-FlowNet/issues/12#issuecomment-644892449); a verified CVPR 2019 implementation/checkpoint has not been integrated. The reimplementation is pending. The author's RSS 2018 EV-FlowNet repository and this project's Hagenaars 5-bin voxel control must not be relabeled as the CVPR 2019 method. See [BASELINES.md](docs/BASELINES.md).
 
 ## EV-LayerSegNet, Farah et al., CVPR Workshops 2025
 
