@@ -52,6 +52,15 @@ sbatch scripts/slurm_izar_reproduce.sh
 
 2モデル×dt1/dt4の4タスク、同時最大2GPUです。検証済みの著者配布pickleを読み、元の採点規約で4収録を評価します。結果JSONと論文表との差分JSONを別々に保存し、許容差外ならジョブは失敗状態になります。ランダム重みへのフォールバックはありません。
 
+RNN・Leakyの残り4モデルは、同じ著者ZIPから対応するrunを展開したうえで次のように評価します。8タスクで全32条件（4モデル×dt1/dt4×4収録）を採点します。学習は行いません。
+
+```bash
+export EFBENCH_MODELS='RNNEVFlowNet LeakyEVFlowNet RNNFireNet LeakyFireNet'
+sbatch --array=0-7%2 scripts/slurm_izar_reproduce.sh
+```
+
+モデルリストを変える場合は配列範囲も`0-(2×モデル数−1)`に合わせます。論文比較の許容差は既存のAEE 0.02 px・外れ値率0.2 percentage pointのままです。
+
 2026-11-18の評価は全16条件（2モデル×2種類のdt×4収録）について完了しました。[全条件の比較CSV](../results/2026-11-18-izar/paper-comparison.csv)と[チェックポイントhash付き結果](../results/2026-11-18-izar/reproduction-summary.json)を公開しています。AEEは全16条件で絶対差0.00859 px以下（事前の許容差0.02 px）でした。外れ値率は14/16条件で許容差0.2 percentage point以内ですが、次の2条件は未一致です。
 
 | 条件 | 論文の外れ値率 | 今回の外れ値率 | 差（percentage points） |
