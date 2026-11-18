@@ -1,0 +1,29 @@
+protocol: matched-v1
+seed: 0
+device: cuda
+data:
+  dataset: uzh_fpv
+  manifest: runs/setup/uzh-matched.json
+  resolution: [128, 128]
+model:
+  name: EVFlowNet
+  encoding: cnt
+  num_bins: 2
+  base_num_channels: 32
+window:
+  stride_events: 1000
+  history_events: 1000
+  loss_events: 10000
+  eval_events: 50000
+  warmup_events: 50000
+train:
+  epochs: 100
+  batch_size: 8
+  lr: 0.0002
+  clip_grad: 100.0
+  smooth_weight: 0.001
+  augment: true
+eval:
+  mode: events
+  flow_scale: 128.0
+  outlier_reference: gt

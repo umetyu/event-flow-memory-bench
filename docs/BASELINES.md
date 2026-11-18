@@ -13,7 +13,7 @@
 | 軽量な先行確認 | 12 | RNN-FireNet | RNNFireNet / count | 配布重み評価完了。8条件とも事前許容差内 |
 | 軽量な先行確認 | 13 | Leaky-FireNet | LeakyFireNet / count | 配布重み評価完了。8条件とも事前許容差内 |
 
-今回追加で再学習したのは[56]のみです。他6モデルは配布済み重みで評価し、既存の5条件 × 3 seedsの学習gridはこの段階では投入していません。[全7モデルの比較と未一致条件](../results/2026-11-18-izar/comparison.md)。事前許容差はAEE 0.02 px・外れ値率0.2 percentage pointです。
+ここまでの論文モデル比較では[56]を再学習し、他6モデルは配布済み重みで評価しました。[全7モデルの比較と未一致条件](../results/2026-11-18-izar/comparison.md)。事前許容差はAEE 0.02 px・外れ値率0.2 percentage pointです。追加指示により、次に非再帰EVFlowNetのcount / 5-bin voxelを各seed 0・100 epochで学習します。5条件 × 3 seedsの一括gridは投入しません。[専用設定と実行手順](INPUT_BASELINES.md)。
 
 別途、後続の要因比較用に同じHagenaars実装の非再帰EVFlowNetのcount / 5-bin voxelを保持します。軽量版の対応モデルはFireFlowNetです。[56]をこの既存voxelモデルの別名として扱いません。
 

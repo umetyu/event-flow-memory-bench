@@ -273,8 +273,14 @@ def train(c, output, resume=None):
                         steps = 0
                         losses.append(float(loss.detach()))
                         trained_events += len(streams) * w["loss_events"]
+                        if len(losses) == 1 or len(losses) % 100 == 0:
+                            print(json.dumps({"phase": "training", "epoch": epoch, "updates": len(losses),
+                                              "last_loss": losses[-1], "trained_events": trained_events,
+                                              "seconds": time.monotonic() - started}), flush=True)
         if not losses:
             raise ValueError("No training updates; sequences must exceed warmup + loss_events")
+        print(json.dumps({"phase": "validation", "epoch": epoch, "updates": len(losses),
+                          "train_seconds": time.monotonic() - started}), flush=True)
         validation = evaluate(c, model, "val", output / f"validation-{epoch:03}.json")
         score = validation["summary"].get("rsat")
         if score is None or validation["summary"].get("rsat_invalid", 0):

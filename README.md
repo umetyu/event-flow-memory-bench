@@ -4,9 +4,9 @@
 
 主ベースラインはConvGRU版 **`RecEVFlowNet`**。対照に非再帰`EVFlowNet`のcount / 5-bin voxel、RNN / Leakyのcountを使います。まず同じ組のFireNet系で動作を確認します。論文で「EV-FlowNet」と呼ばれる再帰モデルは、コードでは`RecEVFlowNet`です。
 
-比較対象はTable 1の**2・4・5・6行目**、すなわちEV-FlowNet* [56]（Zhu 2019）、RecEVFlowNet、RNNRecEVFlowNet、LeakyRecEVFlowNetです。現在の段階では既報値・配布重みを使い、**[56]だけ「論文報告値」と「UZHで再学習 → MVSEC」の2条件**を用意します。前者はMVSEC outdoor_day2で学習した報告値、後者は本基盤で実施した再実装の実測値として区別します。既存の非再帰count / 5-bin voxelは後続の要因切り分け用対照です。[対象・実装状況](docs/BASELINES.md)。
+比較対象はTable 1の**2・4・5・6行目**、すなわちEV-FlowNet* [56]（Zhu 2019）、RecEVFlowNet、RNNRecEVFlowNet、LeakyRecEVFlowNetです。論文の手法については既報値・配布重みを使い、**[56]は「論文報告値」と「UZHで再学習 → MVSEC」の2条件**を用意します。前者はMVSEC outdoor_day2で学習した報告値、後者は本基盤で実施した再実装の実測値として区別します。追加指示により、非再帰count / 5-bin voxelの2条件もseed 0・100 epochで学習します。[対象・実装状況](docs/BASELINES.md)と[2条件の実行仕様](docs/INPUT_BASELINES.md)。
 
-現在生成・実行できるmain gridは従来の5条件です。[56]の[4収録 × dt1/dt4の報告値](configs/literature/zhu2019_table1.csv)に加え、[UZH再学習用の実装・専用設定](docs/ZHU2019.md)を追加し、テストとGPUでの短時間確認を完了しました。既存gridには含めず、現在は他モデルの再学習gridも投入しません。先行確認用FireNet系を維持し、14モデル一括・SNN実験は実行しません。Hebbian更新則自体は未実装です。
+現在生成・実行できるmain gridは従来の5条件です。[56]の[4収録 × dt1/dt4の報告値](configs/literature/zhu2019_table1.csv)と[UZH再学習用の実装・専用設定](docs/ZHU2019.md)はgridから分離しています。今回新たに実行するのは[非再帰count / 5-bin voxelの2条件](docs/INPUT_BASELINES.md)で、5条件×3 seedsの一括gridは投入しません。先行確認用FireNet系を維持し、14モデル一括・SNN実験は実行しません。Hebbian更新則自体は未実装です。
 
 Izar上の著者配布UZH/MVSECを検査し、FireNet / RecEVFlowNetの学習速度を実測済みです。100 epoch・1 seedの推定は約7.0 / 13.5時間。[GPU実行手順と測定条件](docs/IZAR.md)を参照してください。`demo`は合成データによる実装検証です。
 
@@ -85,7 +85,7 @@ efbench grid --stage main --manifest data/uzh.json --output configs/generated/ma
 python scripts/run_grid.py configs/generated/main/jobs.json
 ```
 
-以下は後続の入力×記憶の要因比較用です。現在の各stageは5モデル条件 × 3 seeds = 15 runsですが、今回の「追加再学習は[56]のみ」の段階では投入しません。[56]はこのgridに含めず、[専用の実行手順](docs/ZHU2019.md)を使います。生成YAMLを確認し、batch sizeなどの変更は条件間で揃えて記録します。RNNRecEVFlowNetの元設定にはlr=5e-5の注記がありますが、統一比較は全モデル2e-4から始めます。探索はUZH検証側でのみ行います。
+上のコマンドは5モデル条件 × 3 seeds = 15 runsを投入するため、今回の2条件の実行には使いません。[count / voxel5専用の手順](docs/INPUT_BASELINES.md)で各seed 0だけを実行します。[56]もこのgridに含めず、[専用の実行手順](docs/ZHU2019.md)を使います。生成YAMLを確認し、batch sizeなどの変更は条件間で揃えて記録します。RNNRecEVFlowNetの元設定にはlr=5e-5の注記がありますが、統一比較は全モデル2e-4から始めます。探索はUZH検証側でのみ行います。
 
 ```bash
 # 単一モデルを実行・再開
