@@ -1,0 +1,33 @@
+# 動作検証
+
+2026-11-18、macOS / Python 3.10.22 / PyTorch 2.14.1、CPUで検証しました。
+
+| 検証 | 結果 |
+|---|---|
+| unittestの標準スイート | 25テスト中24通過、任意のLayerSegテスト1件は別実行 |
+| 固定上流checkoutのLayerSegアダプター | forward/backward、flow/mask shapeの追加テスト通過 |
+| 18種類のevent_flowモデル | 出力shape、有限勾配、reset後の出力一致を確認 |
+| 非再帰EVFlowNet / FireFlowNetの5-bin入力 | 出力shapeを確認 |
+| 因果的履歴・現在窓の採点mask | 将来イベント変更に対する不変性を確認 |
+| 大きな絶対timestamp、重複timestamp、境界外座標 | 精度維持・left search・入力検査を確認 |
+| train/val group | 漏洩検出、seed付き分割の再現性を確認 |
+| AEE / 外れ値 | valid mask、GTとpredictionの閾値規約、NaN処理を確認 |
+| dt1 / dt4 | 既知速度の合成GTで変位換算を確認 |
+| FWL / RSAT / loss | zero-flow比=1、有限勾配を確認 |
+| 学習・保存・再読込・評価 | 合成HDF5で一連の処理を確認 |
+| epoch境界からの再開 | 中断なし2 epochsと重みが完全一致 |
+| 原実装再現経路 | 合成HDF5とstate_dictでdt1/dt4を確認。実配布重みは未検証 |
+| 実験表・集計 | 60設定生成、同seed重複拒否を確認 |
+
+```bash
+python -m unittest discover -s tests -v
+EFB_LAYERSEG_SOURCE=/path/to/event_segmentation \
+  python -m unittest discover -s tests -p test_benchmark.py -k layerseg -v
+efbench --threads 1 demo --output runs/demo
+```
+
+LayerSeg上流はaffine_gridのalign_cornersを省略しており、現行PyTorchで既定Falseの警告を出します。元コードを変更せず保持しています。アダプター検査は小さい合成入力でのforward/backwardであり、480×640のGPU学習・論文精度を保証するものではありません。
+
+上流には大きな実験ファイルも追跡されているため、アダプターは全working treeを走査せず、読み込むPythonファイルのGit blobハッシュを固定コミットと照合します。
+
+**未実施:** 実配布データ・重みの取得と検査、MVSEC論文数値再現、全条件GPU学習、AffineObjectsのGT対応確認と実評価。ここに実データの性能数値は掲載していません。

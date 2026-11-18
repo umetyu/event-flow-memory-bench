@@ -1,0 +1,27 @@
+protocol: matched-v1
+seed: 0
+device: cuda
+data:
+  dataset: affineobjects
+  manifest: data/affineobjects.json
+  resolution: [480, 640]
+model:
+  name: EVLayerSegNet
+  source: external/event_segmentation
+  encoding: voxel
+  num_bins: 5
+  base_num_channels: 32
+window:
+  stride_events: 1000
+  history_events: 1000
+  loss_events: 10000
+  eval_events: 50000
+  warmup_events: 50000
+train:
+  epochs: 100
+  batch_size: 8
+  lr: 0.0002
+eval:
+  mode: events
+  flow_scale: 128.0
+  mask_channel: 0
