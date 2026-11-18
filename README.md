@@ -10,7 +10,9 @@
 
 Izar上の著者配布UZH/MVSECを検査し、FireNet / RecEVFlowNetの学習速度を実測済みです。100 epoch・1 seedの推定は約7.0 / 13.5時間。[GPU実行手順と測定条件](docs/IZAR.md)を参照してください。`demo`は合成データによる実装検証です。
 
-配布2モデルのMVSEC評価は完了し、AEEは全16条件で論文との差0.009 px未満でした。外れ値率はdt4の2条件に差が残り、完全再現とは判定していません。[全条件の結果](results/2026-11-18-izar/paper-comparison.csv)。Step 2の本学習は未投入です。
+配布2モデルのMVSEC評価は完了し、AEEは全16条件で論文との差0.009 px未満でした。外れ値率はdt4の2条件に差が残り、完全再現とは判定していません。[全条件の結果](results/2026-11-18-izar/paper-comparison.csv)。Step 2の既存5条件の一括学習は未投入です。
+
+2026-11-18に[56]のUZH再学習をIzar job **3256469**で開始しました。V100 1枚・seed 0・100 epochs、開始確認時点で1 epochとcheckpoint保存を確認しています。[実行記録](results/2026-11-18-izar/zhu2019-launch.json)。学習終了後にMVSEC dt1/dt4を自動評価します。これは著者配布実装ではなく、[差分を明記した論文ベースの再実装](docs/ZHU2019.md)です。
 
 ## 実装済み
 

@@ -1,0 +1,44 @@
+{
+  "job_id": 3256469,
+  "status_snapshot": "RUNNING",
+  "protocol": "zhu2019-reimplementation-v1",
+  "result_kind": "paper_based_reimplementation",
+  "git_revision": "3e818a6068af01534a837abf4d06e00853e39524",
+  "git_dirty_at_launch": false,
+  "config_sha256": "d23222dc843c4b0a169daeb805c837835d1fb47eedb99efb37352b15f42f2b33",
+  "training_manifest_sha256": "683adb3f4aaaa40b1dda03a31ca216ba3ef29c7f411ac47fd1f8391e462241ab",
+  "gpu": "Tesla V100-PCIE-32GB",
+  "torch": "2.5.1+cu121",
+  "parameters": 14132584,
+  "epochs_requested": 100,
+  "seed": 0,
+  "run_directory": "runs/zhu2019-uzh-seed0-3256469",
+  "log": "efbench-zhu2019-3256469.log",
+  "completed_epochs_at_snapshot": 1,
+  "latest_epoch": {
+    "epoch": 0,
+    "train_loss": 1130454.0614583334,
+    "updates": 240,
+    "trained_events": 55680000,
+    "validation": {
+      "rsat": 0.9999999987582365,
+      "windows": 384,
+      "forward_events_in_view_fraction": 0.9824576498940587
+    },
+    "best_rsat": 0.9999999987582365,
+    "train_seconds": 23.659443848067895,
+    "seconds": 28.27445540903136
+  },
+  "post_training_evaluation_dt": [
+    1,
+    4
+  ],
+  "checkpoint_available": true,
+  "observation_date": "2026-11-18",
+  "tests": {
+    "passed": 35,
+    "skipped_optional_layerseg": 1,
+    "github_actions": "https://github.com/umetyu/event-flow-memory-bench/actions/runs/44223635508",
+    "github_actions_conclusion": "success"
+  }
+}
