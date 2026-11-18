@@ -20,6 +20,8 @@ Izar上の著者配布UZH/MVSECを検査し、FireNet / RecEVFlowNetの学習速
 
 追加指定の[GT＋4手法の比較図](docs/REQUESTED_FLOW_FIGURES.md)では、ConvGRU countと[56]型voxel9の実測フローを表示します。非再帰countとShiba CMaxの欄は、ユーザー指定に従い「学習中」「最適化・評価中」の進捗表示だけです。[生成記録](results/2026-11-18-izar/requested-flow-figures.json)。主図はGT有効画素全体、補助図はイベント画素に限定して表示します。
 
+最新の[英語3列版](docs/CLEAR_FLOW_FIGURE.md)は、GT・ConvGRU EV-FlowNet・EV-FlowNet + voxel (9 bins)だけを掲載します。元画像・GTのみで24候補を確認し、樽の輪郭が分かるindoor_flying3の38.493–38.620秒を選択しました。進捗欄は削除し、同じ重みで再推論しています。[生成記録](results/2026-11-18-izar/clear-flow-figure.json)。
+
 ## 実装済み
 
 Gallego 2018のパッチCMax再実装と、Shiba et al. 2022の公式CMaxソルバーを追加しました。学習不要の2手法を、因果的な1k窓と長い窓でMVSEC評価します。Izar `3256789 / 3256790` で全32条件の評価を開始し、終了後は `3256791` で比較表を集計します。[実行条件・原論文との差分](docs/CMAX.md)と[開始時点の記録](results/2026-11-18-izar/cmax-launch.json)。全評価はまだ完了していません。

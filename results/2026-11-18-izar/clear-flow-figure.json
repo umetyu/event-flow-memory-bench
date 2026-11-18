@@ -1,0 +1,168 @@
+{
+  "generated_utc": "2026-11-18T13:58:37.490483+00:00",
+  "protocol": "readable-three-column-flow-v1",
+  "selection": {
+    "selected_utc": "2026-11-18T13:57:40.087821+00:00",
+    "ids": [
+      "indoor_flying3-gt0301-dt4"
+    ],
+    "color_max_px": 10.0,
+    "predictions_used_for_selection": false,
+    "reason": "A clearly visible barrel and background, with a corresponding contour in GT flow; substantial GT coverage and visible motion. Selected from scene/GT-only contact sheets before neural inference.",
+    "candidates_inspected": 24,
+    "primary": "indoor_flying3-gt0301-dt4"
+  },
+  "candidate_metadata_sha256": "b2655642fb079ccf684c214f47a6dec62cd8c5a3f1e18a4ae9e5f2b991946e47",
+  "manifest_sha256": "abc131fa349053432531c19e6ce94628c56643ea3fee1a8f5eb3790b50e7c5eb",
+  "author_checkpoint_sha256": "5adb204b675a556cd292661236c45f742c2d629b9e04e3859ee482004bb0d8fe",
+  "voxel9_checkpoint": {
+    "sha256": "19eedb090d69858cddf7245a734d852cbb85dcda5db7fdca99c89a06395f80c9",
+    "checkpoint_epoch": 24,
+    "kind": "UZH-trained Zhu 2019 paper-based reimplementation",
+    "best_validation_rsat": 0.9999999981373549,
+    "training_config": {
+      "protocol": "zhu2019-reimplementation-v1",
+      "seed": 0,
+      "device": "cuda",
+      "data": {
+        "dataset": "uzh_fpv",
+        "manifest": "runs/setup/uzh-matched.json",
+        "resolution": [
+          128,
+          128
+        ]
+      },
+      "model": {
+        "num_bins": 9,
+        "base_num_channels": 32,
+        "kernel_size": 3
+      },
+      "train": {
+        "epochs": 100,
+        "batch_size": 8,
+        "events_per_input": 30000,
+        "lr": 0.0002,
+        "clip_grad": 100.0,
+        "smooth_weight": 1.0,
+        "charbonnier_eps": 0.001,
+        "splat_eps": 1e-06,
+        "augment": true
+      }
+    }
+  },
+  "inference_script_sha256": "4e5bd89cbdc87b75878534da0b6727823eec4f7ffed92b651c966251b5e35a96",
+  "examples": [
+    {
+      "id": "indoor_flying3-gt0301-dt4",
+      "sequence": "indoor_flying3",
+      "dt": 4,
+      "gt_interval_index": 301,
+      "gt_dataset": "flowmap000001212",
+      "timestamp_start": 1504645481.5785863,
+      "timestamp_end": 1504645481.7060244,
+      "relative_start_seconds": 38.49299097061157,
+      "relative_end_seconds": 38.620429039001465,
+      "start_event": 5790983,
+      "end_event": 5811393,
+      "gt_seconds": 0.12743806838989258,
+      "event_time_origin": 1504645443.0855954,
+      "frame_timestamp": 1504645481.6423054,
+      "frame_dataset": "image000001210",
+      "arrays_file": "indoor_flying3-gt0301-dt4.npz",
+      "gt_valid_fraction": 0.7877044677734375,
+      "gt_median_px": 6.902976036071777,
+      "gt_p95_px": 9.441606140136717,
+      "interval_events": 20410,
+      "npz_sha256": "4fb219daf893cd86d4fe270ba986387bd54ef74eb7344f29b86e874cd95a7990",
+      "convgru_input_events": 1000,
+      "convgru_input_seconds": 0.002682924270629883,
+      "voxel9_input_events": 15000,
+      "voxel9_input_seconds": 0.09198784828186035,
+      "color_max_px": 10.0,
+      "metrics": {
+        "convgru_flow": {
+          "aee": 11.206897735595703,
+          "outlier_pct": 99.48484080736424,
+          "valid_pixels": 11841
+        },
+        "voxel9_flow": {
+          "aee": 7.118444442749023,
+          "outlier_pct": 100.0,
+          "valid_pixels": 11841
+        }
+      },
+      "array_sha256": {
+        "gt_flow": "056ad2dd49ed6f6b81c7daf29740815e12add2d1f4929a8ecf471509640d9489",
+        "gt_valid": "8636d8bd57f6621b4774a4254172d710baa7cdcf699079e9fca6b97b2aa9d950",
+        "scene": "78ad2c9326af641bef23ee9e89235879078e38951e2660b8aed0c37362c449c8",
+        "event_counts": "d3364402cb8e719b3ccec999bd6aafaa0dbaace854e5793cab77a2525b383dde",
+        "event_mask": "d590d5103f7afee3aace6946e95abcffc3ce34a7fc788063de7df629b1aeb3fc",
+        "convgru_raw": "14efa764419a338e2d2610dfcd1c67431885aa45b1d189c25d4246119060d8d3",
+        "convgru_flow": "e4938becc07b8e8204d1e089c5562bc004ec9ec809c780ffeb0e4f615c65e5aa",
+        "convgru_input_xy_tp": "f293917f385ad17090b1e575053ca141d2875ceba82e976094793a0239903f78",
+        "voxel9_raw": "60905ff7ab97f0a32dd32473da29dcc1f9989acab1c4a18e0faf9e5d811307ff",
+        "voxel9_flow": "6d83e962d5314ce001029b8fca7b7428caba1bd5fc121531c33580d335f20770",
+        "voxel9_input_xy_tp": "ac74f56ea8a51dadf663d2daad817ebbbeb004b5385a1ab4b4fcadc1afcda0c7",
+        "display_mask": "36840c9cbab6f1e9f5966bc976818271c757e4830d3e9ff7fed992309533adf6"
+      }
+    }
+  ],
+  "settings": {
+    "convgru_input_events": 1000,
+    "convgru_state": "from event 0; full nonoverlapping 1k windows aligned to GT endpoint",
+    "voxel9_input_events": {
+      "outdoor": 30000,
+      "indoor": 15000
+    },
+    "future_events": false,
+    "displacement_units": "GT-interval pixels; ConvGRU uses 128*GTdt/inputdt; voxel9 uses 8*GTdt/inputdt"
+  },
+  "limitations": [
+    "Selected for scene/GT readability before model inference; these are illustrative intervals, not dataset averages.",
+    "Input histories and training conditions differ between the models.",
+    "Voxel9 is the same UZH reimplementation checkpoint as before; near-zero outputs are not altered."
+  ],
+  "render": {
+    "script_sha256": "4e5bd89cbdc87b75878534da0b6727823eec4f7ffed92b651c966251b5e35a96",
+    "language": "English",
+    "pending_panels": false,
+    "titles": [
+      "GT flow",
+      "ConvGRU EV-FlowNet",
+      "EV-FlowNet + voxel (9 bins)"
+    ],
+    "files": {
+      "indoor_flying3-gt0301-dt4-arrows.png": "91ccfc76503c9e9e5af21b1bbb96e6f422ae39e5b344faf2e272d89f1e194355",
+      "indoor_flying3-gt0301-dt4-scene.png": "1f1d2e8b497740be44f743643a5e9407f9c5917968bf72a6770fe066c80a5697",
+      "indoor_flying3-gt0301-dt4.png": "d729343328aecbde107ff3ade39bf362e7cc26db9f3e4df4647869830165a7b3",
+      "indoor_flying3-gt0301-dt4-arrows.svg": "20249c1fee57ad1161fb681db6dbe4dabe6ebd9bdef9458551d808ac2565b092",
+      "indoor_flying3-gt0301-dt4.svg": "55d975e2bf396a2e488d53dfd0afe52f1b8f34caadfb753579afbfea23bcc6c1"
+    }
+  },
+  "jobs": {
+    "preview": 3257023,
+    "inference": 3257025
+  },
+  "verification": {
+    "same_checkpoint_hashes_as_previous_figures": true,
+    "gt_interval_and_arrays_verified": true,
+    "source_gt_mask_preserved": true,
+    "input_durations_checked_against_saved_events": true,
+    "causal_inputs_verified": true,
+    "native_to_gt_displacement_conversion_verified": true,
+    "aee_independently_recomputed": true,
+    "prediction_based_scene_selection": false,
+    "visual_review_completed_utc": "2026-11-18T14:03:02.261540+00:00",
+    "visual_review_files": [
+      "indoor_flying3-gt0301-dt4.png",
+      "indoor_flying3-gt0301-dt4-arrows.png",
+      "indoor_flying3-gt0301-dt4-scene.png"
+    ],
+    "english_three_column_labels_verified": true,
+    "pending_panels_removed": true,
+    "shared_color_scale_verified": true
+  },
+  "figure_documentation": "docs/CLEAR_FLOW_FIGURE.md",
+  "artifact_directory": "runs/clear-flow-3257025",
+  "primary_figure": "indoor_flying3-gt0301-dt4.png"
+}
