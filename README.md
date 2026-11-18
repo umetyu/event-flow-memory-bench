@@ -18,6 +18,8 @@ Izar上の著者配布UZH/MVSECを検査し、FireNet / RecEVFlowNetの学習速
 
 ## 実装済み
 
+Gallego 2018のパッチCMax再実装と、Shiba et al. 2022の公式CMaxソルバーを追加しました。学習不要の2手法を、因果的な1k窓と長い窓でMVSEC評価します。[実行条件・原論文との差分](docs/CMAX.md)。
+
 - NeurIPS 2021のモデル18種を固定コミットから収録。MITライセンス・出典を保持。
 - 原実装のローダーと指標を使うMVSEC `dt=1/4`再現評価、論文表との比較。
 - count / signed voxel、因果的な履歴窓、更新間隔・loss窓・評価窓の独立指定。

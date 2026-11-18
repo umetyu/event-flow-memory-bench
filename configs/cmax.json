@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "protocol": "cmax-causal-v1",
+  "resolution": [256, 256],
+  "seed": 0,
+  "warmup_events": 50000,
+  "windows": {"matched1k": 1000, "long": {"indoor": 30000, "outdoor": 40000}},
+  "patch2018": {
+    "patch_size": 32,
+    "min_events": 10,
+    "blur_sigma": 1.0,
+    "max_displacement": 32.0,
+    "initial_displacements": [-8, -4, -2, 0, 2, 4, 8],
+    "iterations": 80,
+    "learning_rate": 0.2
+  },
+  "secrets2022": {
+    "solver": {
+      "method": "pyramidal_patch_contrast_maximization",
+      "time_aware": true,
+      "time_bin": 10,
+      "flow_interpolation": "burgers",
+      "t0_flow_location": "middle",
+      "patch": {"initialize": "random", "scale": 5, "crop_height": 256, "crop_width": 256, "filter_type": "bilinear"},
+      "motion_model": "2d-translation",
+      "warp_direction": "first",
+      "parameters": ["trans_x", "trans_y"],
+      "cost": "hybrid",
+      "outer_padding": 0,
+      "cost_with_weight": {"multi_focal_normalized_gradient_magnitude": 1.0, "total_variation": 0.01},
+      "iwe": {"method": "bilinear_vote", "blur_sigma": 1}
+    },
+    "optimizer": {
+      "n_iter": 40,
+      "method": "Newton-CG",
+      "max_iter": 25,
+      "parameters": {"trans_x": {"min": -150, "max": 150}, "trans_y": {"min": -150, "max": 150}}
+    }
+  }
+}

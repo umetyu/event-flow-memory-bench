@@ -1,0 +1,9 @@
+method,dt,sequence,aee,outlier_3px_pct
+Shiba2022_Burgers,1,outdoor_day1,0.30075,0.10440
+Shiba2022_Burgers,1,indoor_flying1,0.42274,0.10303
+Shiba2022_Burgers,1,indoor_flying2,0.60456,0.59485
+Shiba2022_Burgers,1,indoor_flying3,0.49987,0.27932
+Shiba2022_Burgers,4,outdoor_day1,1.24994,9.20702
+Shiba2022_Burgers,4,indoor_flying1,1.68961,12.94904
+Shiba2022_Burgers,4,indoor_flying2,2.48956,26.34562
+Shiba2022_Burgers,4,indoor_flying3,2.06367,19.02718
