@@ -4,7 +4,7 @@
   "paper_label": "EV-FlowNet* [56]",
   "hagenaars_table1_row": 2,
   "selected": true,
-  "execution_status": "published_reference_ready_retraining_implementation_pending",
+  "execution_status": "published_reference_ready_reimplementation_validated",
   "author_release_discussion": "https://github.com/daniilidis-group/EV-FlowNet/issues/12#issuecomment-644892449",
   "verified_implementation": null,
   "verified_checkpoint": null,
@@ -16,7 +16,10 @@
     "encoding": "signed_voxel_linear_interpolation",
     "num_bins": 9,
     "training_events_per_input": 30000,
-    "resolution": [256, 256],
+    "resolution": [
+      256,
+      256
+    ],
     "evaluation_events_outdoor": 30000,
     "evaluation_events_indoor": 15000,
     "native_output_unit": "pixels_per_bin",
@@ -31,8 +34,16 @@
     "implement_model": false,
     "result_kind": "published_reference_not_reproduced",
     "evaluation_dataset": "mvsec",
-    "evaluation_sequences": ["outdoor_day1", "indoor_flying1", "indoor_flying2", "indoor_flying3"],
-    "evaluation_dt": [1, 4],
+    "evaluation_sequences": [
+      "outdoor_day1",
+      "indoor_flying1",
+      "indoor_flying2",
+      "indoor_flying3"
+    ],
+    "evaluation_dt": [
+      1,
+      4
+    ],
     "scoring": "original paper; not recomputed",
     "comparable_as_matched_protocol": false,
     "include_in_seed_aggregation": false
@@ -40,23 +51,39 @@
   "planned_experiment": {
     "id": "zhu2019-uzh",
     "implementation_kind": "paper_based_reimplementation",
-    "status": "implementation_pending_not_submitted",
+    "status": "implemented_smoke_validated",
     "retrain": true,
     "training_dataset": "uzh_fpv",
     "split": "existing recording-level split: 116 training / 24 validation crops",
     "evaluation_dataset": "mvsec",
-    "evaluation_sequences": ["outdoor_day1", "indoor_flying1", "indoor_flying2", "indoor_flying3"],
-    "evaluation_dt": [1, 4],
+    "evaluation_sequences": [
+      "outdoor_day1",
+      "indoor_flying1",
+      "indoor_flying2",
+      "indoor_flying3"
+    ],
+    "evaluation_dt": [
+      1,
+      4
+    ],
     "model_selection": "UZH validation only",
     "require_documented_implementation_differences": true,
-    "require_matched_scoring": true,
-    "training_config": null,
-    "checkpoint": null
+    "require_matched_scoring": false,
+    "training_config": "configs/uzh_zhu2019.yml",
+    "checkpoint": null,
+    "implementation": "src/event_flow_bench/zhu2019.py",
+    "implementation_notes": "docs/ZHU2019.md",
+    "evaluation_protocol": "causal 30k outdoor / 15k indoor inputs; GT-interval event mask; both 3px-only and 3px-AND-5%-GT outliers"
   },
   "current_phase": {
-    "additional_retraining_baselines": ["zhu2019-uzh"],
+    "additional_retraining_baselines": [
+      "zhu2019-uzh"
+    ],
     "other_baselines": "published values or distributed checkpoint evaluation",
     "launch_existing_training_grid": false
   },
-  "not_equivalent_to": ["Hagenaars EVFlowNet with 5-bin voxel input", "RSS 2018 EV-FlowNet [54]"]
+  "not_equivalent_to": [
+    "Hagenaars EVFlowNet with 5-bin voxel input",
+    "RSS 2018 EV-FlowNet [54]"
+  ]
 }

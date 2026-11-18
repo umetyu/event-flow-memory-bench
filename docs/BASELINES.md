@@ -5,7 +5,7 @@
 | 用途 | 行 | 論文の表記 | この基盤での識別 | 状態 |
 |---|---:|---|---|---|
 | 論文報告値による参考比較 | 2 | EV-FlowNet* [56] | zhu2019 / published_reference_not_reproduced | 8条件の報告値を収録済み。当プロジェクトで推論した値ではない |
-| 追加の再学習比較 | 2と同じ手法 | EV-FlowNet* [56] | zhu2019-uzh（再実装 → UZH学習 → MVSEC評価） | 採用済み。実装未完了、学習ジョブ未投入 |
+| 追加の再学習比較 | 2と同じ手法 | EV-FlowNet* [56] | zhu2019-uzh（再実装 → UZH学習 → MVSEC評価） | 再実装済み。テスト・実データ20更新を検証済み。[実行仕様](ZHU2019.md) |
 | 主比較 | 4 | EV-FlowNet | RecEVFlowNet / count | 実装済み。配布重み評価済み |
 | 主比較 | 5 | RNN-EV-FlowNet | RNNRecEVFlowNet / count | 実装済み、未学習 |
 | 主比較 | 6 | Leaky-EV-FlowNet | LeakyRecEVFlowNet / count | 実装済み、未学習 |
@@ -52,6 +52,6 @@ Hagenaarsのactive-pixel数で正規化した損失や、既存の5-bin voxel対
 
 著者は[Issue #12の回答](https://github.com/daniilidis-group/EV-FlowNet/issues/12#issuecomment-644892449)で、当時の勤務先の制約から公開対応が難しく、独自再実装なら支援できると説明しています。現在確認できたmaster branchからCVPR 2019の正式実装・配布重みは同定できていません。
 
-再学習版は、論文に基づく再実装として差分を明示して追加します。9-bin入力、双方向timestamp損失、smoothness、出力のpixel/bin単位を検証し、既存のHagenaars損失と5-binモデルをそのまま[56]と呼ぶことはしません。現段階では実行可能な学習設定がなく、学習ジョブは未投入です。
+再学習版は、論文に基づく再実装として差分を明示して追加します。9-bin入力、双方向timestamp損失、smoothness、出力のpixel/bin単位を検証し、既存のHagenaars損失と5-binモデルをそのまま[56]と呼ぶことはしません。[専用実装・学習設定](ZHU2019.md)を追加し、35テスト成功・任意接続1件skip、Izarで20更新と検証1本の確認を完了しました。精度の検証は本学習・MVSEC評価後に行います。
 
-[機械可読の仕様](../configs/literature/zhu2019.json)と[原論文の参考値](../configs/literature/zhu2019_table1.csv)を収録しています。後者は当プロジェクトの実測値ではなく、collect対象のresultsとは分離しています。`main` gridは5条件のままで、未実装の[56]を学習済み・実行可能とは数えません。
+[機械可読の仕様](../configs/literature/zhu2019.json)と[原論文の参考値](../configs/literature/zhu2019_table1.csv)を収録しています。後者は当プロジェクトの実測値ではなく、collect対象のresultsとは分離しています。`main` gridは5条件のままです。[56]は専用コマンドで実行し、論文報告値と再実装の実測値を別に記録します。

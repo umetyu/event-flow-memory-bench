@@ -35,3 +35,9 @@ LayerSeg上流はaffine_gridのalign_cornersを省略しており、現行PyTorc
 配布重み2モデル×dt1/dt4×4収録の評価を完了。AEEは16/16条件で論文との差0.00859 px以下、外れ値率は14/16条件で事前許容差内です。FireNet outdoor_day1 dt4とRecEVFlowNet indoor_flying3 dt4の外れ値率に差が残り、完全再現の判定はしていません。[全条件の結果](../results/2026-11-18-izar/paper-comparison.csv)。
 
 **未実施:** 全条件の本学習、AffineObjectsのGT対応確認と実評価。短い速度計測は学習完了や精度再現を意味しません。
+
+## Zhu 2019再実装の追加検証
+
+Izar job 3256468で全36テストを実行し、35成功・任意のLayerSeg接続1件skipでした。新規11テストは9-bin補間、極性・境界splat、双方向timestamp損失、有限差分との勾配一致、smoothness、単位換算、モデル全段のbackward、設定制約、再開の同一性、smokeの扱い、MVSEC評価の因果性を確認します。
+
+同じjobで実UZHを20更新し、1本の検証データの16窓を評価しました。loss・勾配・RSATが有限で完了し、forward warp後の画面内イベント割合は約0.9928でした。[動作確認の数値](../results/2026-11-18-izar/zhu2019-smoke.json)。この短い確認のRSATは1.0であり、精度向上・収束はまだ示していません。[実装の選択と差分](ZHU2019.md)を参照してください。

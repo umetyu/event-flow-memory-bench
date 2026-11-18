@@ -1,6 +1,6 @@
 # Izarでの実行
 
-現在は既報値・配布済み重みで比較し、追加再学習を[56]のUZH学習に限定します。[56]は論文報告値も別条件として保持します。再学習版は実装未完了で、ジョブは未投入です。[最新の対象](BASELINES.md)。既存5条件gridは後続の要因比較用に保持し、SNNを含む全モデル一括学習は今回の実行範囲に含めません。
+現在は既報値・配布済み重みで比較し、追加再学習を[56]のUZH学習に限定します。[56]は論文報告値も別条件として保持します。再学習版は実装し、GPUのsmoke job 3256468で全テストと実データ20更新を確認しました。本学習は[専用手順](ZHU2019.md)で行います。[最新の対象](BASELINES.md)。既存5条件gridは後続の要因比較用に保持し、SNNを含む全モデル一括学習は今回の実行範囲に含めません。
 
 Table 1の最上段`EV-FlowNet* [54]`を1行目として数えると、比較対象は2・4・5・6行目、FireNet系は11・12・13行目です。2行目の[56]は「論文報告値（MVSEC outdoor_day2学習）」と「UZHで再学習」の2条件に分け、採点規約も明記します。既存Hagenaars実装の非再帰count / 5-bin voxelは別の要因切り分け用対照です。現時点で配布重み評価と速度計測を完了したのは4行目のRecEVFlowNetと11行目のFireNetです。
 
@@ -72,4 +72,8 @@ sbatch scripts/slurm_izar_reproduce.sh
   --manifest runs/setup/uzh-matched.json --seeds 0 --output runs/setup/main
 ```
 
-各5条件を生成します。設定生成は学習の投入を行いません。これは後続の要因比較用で、現在の「追加再学習は[56]のみ」の段階ではこのgridを投入しません。[56]の実装はこのgridに含まれていません。履歴窓を振る実験とAffineObjectsは別段階です。
+各5条件を生成します。設定生成は学習の投入を行いません。これは後続の要因比較用で、現在の「追加再学習は[56]のみ」の段階ではこのgridを投入しません。[56]はこのgridに含めず、専用Slurmスクリプトで実行します。履歴窓を振る実験とAffineObjectsは別段階です。
+
+## 配布重みの収録確認
+
+著者ZIPにはTable 1のHagenaars 14モデル全てとFireFlowNet系3モデルの計17個のmodel.pthが含まれます。RNNEVFlowNetのparamsはRNNRecEVFlowNet、LeakyEVFlowNetはLeakyRecEVFlowNetであることを確認しました。[56]の重みは含まれません。重みの存在確認と、その重みでの評価完了は区別します。

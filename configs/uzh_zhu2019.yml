@@ -1,0 +1,21 @@
+protocol: zhu2019-reimplementation-v1
+seed: 0
+device: cuda
+data:
+  dataset: uzh_fpv
+  manifest: runs/setup/uzh-matched.json
+  resolution: [128, 128]
+model:
+  num_bins: 9
+  base_num_channels: 32
+  kernel_size: 3
+train:
+  epochs: 100
+  batch_size: 8
+  events_per_input: 30000
+  lr: 0.0002
+  clip_grad: 100.0
+  smooth_weight: 1.0
+  charbonnier_eps: 0.001
+  splat_eps: 0.000001
+  augment: true

@@ -1,0 +1,13 @@
+{
+  "status": "smoke_complete_not_full_training",
+  "updates": 20,
+  "first_loss": 1171105.375,
+  "last_loss": 1089995.375,
+  "validation": {
+    "rsat": 1.0,
+    "windows": 16,
+    "forward_events_in_view_fraction": 0.992797926068306
+  },
+  "seconds_including_probe": 6.165858134976588,
+  "cuda_peak_bytes": 699052032
+}
