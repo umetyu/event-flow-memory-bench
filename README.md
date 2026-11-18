@@ -4,7 +4,9 @@
 
 主ベースラインはConvGRU版 **`RecEVFlowNet`**。対照に非再帰`EVFlowNet`のcount / 5-bin voxel、RNN / Leakyのcountを使います。まず同じ組のFireNet系で動作を確認します。論文で「EV-FlowNet」と呼ばれる再帰モデルは、コードでは`RecEVFlowNet`です。
 
-**実データの再現値や学習済み重みはまだありません。** `demo`は合成データによる実装検証です。データとGPUを配置してから下記の順に実験します。Hebbian更新則自体は未実装です。
+現在の実行対象はStep 2の5条件（EVFlowNet count / voxel、RecEVFlowNet / RNNRecEVFlowNet / LeakyRecEVFlowNet count）と先行確認用FireNet系です。14モデル一括・SNN実験は実行しません。Hebbian更新則自体は未実装です。
+
+Izar上の著者配布UZH/MVSECを検査し、FireNet / RecEVFlowNetの学習速度を実測済みです。100 epoch・1 seedの推定は約7.0 / 13.5時間。[GPU実行手順と測定条件](docs/IZAR.md)を参照してください。`demo`は合成データによる実装検証です。
 
 ## 実装済み
 
@@ -128,5 +130,6 @@ python scripts/run_grid.py configs/generated/affine-layerseg/jobs.json
 - [実施順序・完了条件](docs/ROADMAP.md)
 - [上流コード・変更点・引用](THIRD_PARTY.md)
 - [動作検証](docs/VALIDATION.md)
+- [Izarでのデータ検査・速度計測・再現評価](docs/IZAR.md)
 
 本体はMIT。vendor内のTU Delftライセンスを保持してください。データとEV-LayerSegNetは各配布元の条件に従います。

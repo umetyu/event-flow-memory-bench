@@ -1,0 +1,1196 @@
+{
+  "training": [
+    {
+      "file": "indoor_forward_10_davis_with_gt_0.h5",
+      "events": 500000,
+      "bytes": 7161904,
+      "first_timestamp": 1540823052.8331308,
+      "last_timestamp": 1540823065.8185139,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_10_davis_with_gt_1.h5",
+      "events": 500000,
+      "bytes": 6975536,
+      "first_timestamp": 1540823065.818523,
+      "last_timestamp": 1540823068.4021878,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_10_davis_with_gt_2.h5",
+      "events": 500000,
+      "bytes": 6856752,
+      "first_timestamp": 1540823068.402189,
+      "last_timestamp": 1540823071.5806,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_10_davis_with_gt_3.h5",
+      "events": 500000,
+      "bytes": 7786544,
+      "first_timestamp": 1540823071.580606,
+      "last_timestamp": 1540823074.375628,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_10_davis_with_gt_4.h5",
+      "events": 500000,
+      "bytes": 7262256,
+      "first_timestamp": 1540823074.375643,
+      "last_timestamp": 1540823088.538091,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_10_davis_with_gt_5.h5",
+      "events": 500000,
+      "bytes": 7026736,
+      "first_timestamp": 1540823088.538116,
+      "last_timestamp": 1540823094.849448,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_10_davis_with_gt_6.h5",
+      "events": 500000,
+      "bytes": 7110704,
+      "first_timestamp": 1540823094.84946,
+      "last_timestamp": 1540823102.2739599,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_10_davis_with_gt_7.h5",
+      "events": 500000,
+      "bytes": 6873136,
+      "first_timestamp": 1540823102.2740269,
+      "last_timestamp": 1540823110.35676,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_10_davis_with_gt_8.h5",
+      "events": 500000,
+      "bytes": 7211056,
+      "first_timestamp": 1540823110.356762,
+      "last_timestamp": 1540823119.643152,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_11_davis_0.h5",
+      "events": 500000,
+      "bytes": 6940720,
+      "first_timestamp": 1540823970.6422257,
+      "last_timestamp": 1540823987.7611005,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_11_davis_1.h5",
+      "events": 500000,
+      "bytes": 6805552,
+      "first_timestamp": 1540823987.7611265,
+      "last_timestamp": 1540823990.3927817,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_11_davis_10.h5",
+      "events": 500000,
+      "bytes": 6737968,
+      "first_timestamp": 1540824030.6728287,
+      "last_timestamp": 1540824032.0689425,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_11_davis_11.h5",
+      "events": 500000,
+      "bytes": 6721584,
+      "first_timestamp": 1540824032.0689485,
+      "last_timestamp": 1540824033.0566847,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_11_davis_12.h5",
+      "events": 500000,
+      "bytes": 6772784,
+      "first_timestamp": 1540824033.0566847,
+      "last_timestamp": 1540824035.0347817,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_11_davis_13.h5",
+      "events": 500000,
+      "bytes": 6686768,
+      "first_timestamp": 1540824035.0347846,
+      "last_timestamp": 1540824037.5726786,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_11_davis_14.h5",
+      "events": 500000,
+      "bytes": 6907952,
+      "first_timestamp": 1540824037.5726795,
+      "last_timestamp": 1540824039.0793056,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_11_davis_15.h5",
+      "events": 500000,
+      "bytes": 7094320,
+      "first_timestamp": 1540824039.0793107,
+      "last_timestamp": 1540824041.9043245,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_11_davis_16.h5",
+      "events": 500000,
+      "bytes": 6737968,
+      "first_timestamp": 1540824041.9043257,
+      "last_timestamp": 1540824044.8407726,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_11_davis_17.h5",
+      "events": 500000,
+      "bytes": 6686768,
+      "first_timestamp": 1540824044.8407795,
+      "last_timestamp": 1540824046.4416466,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_11_davis_18.h5",
+      "events": 500000,
+      "bytes": 6840368,
+      "first_timestamp": 1540824046.4416475,
+      "last_timestamp": 1540824048.2298117,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_11_davis_19.h5",
+      "events": 500000,
+      "bytes": 6991920,
+      "first_timestamp": 1540824048.2298117,
+      "last_timestamp": 1540824051.2876925,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_11_davis_2.h5",
+      "events": 500000,
+      "bytes": 6907952,
+      "first_timestamp": 1540823990.3927827,
+      "last_timestamp": 1540823993.4132986,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_11_davis_3.h5",
+      "events": 500000,
+      "bytes": 6991920,
+      "first_timestamp": 1540823993.4133186,
+      "last_timestamp": 1540824004.1040776,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_11_davis_4.h5",
+      "events": 500000,
+      "bytes": 7026736,
+      "first_timestamp": 1540824004.1040785,
+      "last_timestamp": 1540824010.2634847,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_11_davis_5.h5",
+      "events": 500000,
+      "bytes": 6789168,
+      "first_timestamp": 1540824010.2635176,
+      "last_timestamp": 1540824016.7731547,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_11_davis_6.h5",
+      "events": 500000,
+      "bytes": 6975536,
+      "first_timestamp": 1540824016.7731586,
+      "last_timestamp": 1540824020.9430747,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_11_davis_7.h5",
+      "events": 500000,
+      "bytes": 6721584,
+      "first_timestamp": 1540824020.9430797,
+      "last_timestamp": 1540824025.7890987,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_11_davis_8.h5",
+      "events": 500000,
+      "bytes": 6856752,
+      "first_timestamp": 1540824025.7891076,
+      "last_timestamp": 1540824028.3839657,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_11_davis_9.h5",
+      "events": 500000,
+      "bytes": 6737968,
+      "first_timestamp": 1540824028.3839717,
+      "last_timestamp": 1540824030.6728287,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_12_davis_0.h5",
+      "events": 500000,
+      "bytes": 6823984,
+      "first_timestamp": 1540824275.1197178,
+      "last_timestamp": 1540824282.919395,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_12_davis_1.h5",
+      "events": 500000,
+      "bytes": 6772784,
+      "first_timestamp": 1540824282.9194238,
+      "last_timestamp": 1540824285.5647159,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_12_davis_10.h5",
+      "events": 500000,
+      "bytes": 6856752,
+      "first_timestamp": 1540824319.372427,
+      "last_timestamp": 1540824322.72595,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_12_davis_11.h5",
+      "events": 500000,
+      "bytes": 6856752,
+      "first_timestamp": 1540824322.725955,
+      "last_timestamp": 1540824324.663477,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_12_davis_2.h5",
+      "events": 500000,
+      "bytes": 6924336,
+      "first_timestamp": 1540824285.5647218,
+      "last_timestamp": 1540824287.354303,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_12_davis_3.h5",
+      "events": 500000,
+      "bytes": 6823984,
+      "first_timestamp": 1540824287.3543088,
+      "last_timestamp": 1540824297.4247298,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_12_davis_4.h5",
+      "events": 500000,
+      "bytes": 6670384,
+      "first_timestamp": 1540824297.4247339,
+      "last_timestamp": 1540824304.335006,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_12_davis_5.h5",
+      "events": 500000,
+      "bytes": 6670384,
+      "first_timestamp": 1540824304.335013,
+      "last_timestamp": 1540824305.332888,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_12_davis_6.h5",
+      "events": 500000,
+      "bytes": 6721584,
+      "first_timestamp": 1540824305.3328888,
+      "last_timestamp": 1540824307.1177938,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_12_davis_7.h5",
+      "events": 500000,
+      "bytes": 6705200,
+      "first_timestamp": 1540824307.117797,
+      "last_timestamp": 1540824310.276111,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_12_davis_8.h5",
+      "events": 500000,
+      "bytes": 6856752,
+      "first_timestamp": 1540824310.2761118,
+      "last_timestamp": 1540824313.6156108,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_12_davis_9.h5",
+      "events": 500000,
+      "bytes": 7381040,
+      "first_timestamp": 1540824313.6156118,
+      "last_timestamp": 1540824319.3723948,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_3_davis_with_gt_0.h5",
+      "events": 500000,
+      "bytes": 6907952,
+      "first_timestamp": 1540820236.5651102,
+      "last_timestamp": 1540820249.287441,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_3_davis_with_gt_1.h5",
+      "events": 500000,
+      "bytes": 6924336,
+      "first_timestamp": 1540820249.2874432,
+      "last_timestamp": 1540820253.8780372,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_3_davis_with_gt_10.h5",
+      "events": 500000,
+      "bytes": 6873136,
+      "first_timestamp": 1540820310.7915192,
+      "last_timestamp": 1540820315.1137981,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_3_davis_with_gt_11.h5",
+      "events": 500000,
+      "bytes": 6772784,
+      "first_timestamp": 1540820315.1138012,
+      "last_timestamp": 1540820317.3264122,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_3_davis_with_gt_12.h5",
+      "events": 500000,
+      "bytes": 9145136,
+      "first_timestamp": 1540820317.3264172,
+      "last_timestamp": 1540820319.8635602,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_3_davis_with_gt_2.h5",
+      "events": 500000,
+      "bytes": 9347888,
+      "first_timestamp": 1540820253.878051,
+      "last_timestamp": 1540820265.263586,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_3_davis_with_gt_3.h5",
+      "events": 500000,
+      "bytes": 6856752,
+      "first_timestamp": 1540820265.2636242,
+      "last_timestamp": 1540820272.8501942,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_3_davis_with_gt_4.h5",
+      "events": 500000,
+      "bytes": 6940720,
+      "first_timestamp": 1540820272.850197,
+      "last_timestamp": 1540820278.5336752,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_3_davis_with_gt_5.h5",
+      "events": 500000,
+      "bytes": 6891568,
+      "first_timestamp": 1540820278.5337281,
+      "last_timestamp": 1540820285.7773442,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_3_davis_with_gt_6.h5",
+      "events": 500000,
+      "bytes": 6805552,
+      "first_timestamp": 1540820285.7773561,
+      "last_timestamp": 1540820292.8955882,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_3_davis_with_gt_7.h5",
+      "events": 500000,
+      "bytes": 6805552,
+      "first_timestamp": 1540820292.895591,
+      "last_timestamp": 1540820298.4996011,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_3_davis_with_gt_8.h5",
+      "events": 500000,
+      "bytes": 6772784,
+      "first_timestamp": 1540820298.4996011,
+      "last_timestamp": 1540820304.1919641,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_3_davis_with_gt_9.h5",
+      "events": 500000,
+      "bytes": 6856752,
+      "first_timestamp": 1540820304.191966,
+      "last_timestamp": 1540820310.79147,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_5_davis_with_gt_0.h5",
+      "events": 500000,
+      "bytes": 7245872,
+      "first_timestamp": 1540821096.612338,
+      "last_timestamp": 1540821108.556963,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_5_davis_with_gt_1.h5",
+      "events": 500000,
+      "bytes": 7075888,
+      "first_timestamp": 1540821108.556972,
+      "last_timestamp": 1540821113.171916,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_5_davis_with_gt_10.h5",
+      "events": 500000,
+      "bytes": 7313456,
+      "first_timestamp": 1540821167.0335271,
+      "last_timestamp": 1540821172.88419,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_5_davis_with_gt_11.h5",
+      "events": 500000,
+      "bytes": 6873136,
+      "first_timestamp": 1540821172.884192,
+      "last_timestamp": 1540821179.575476,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_5_davis_with_gt_12.h5",
+      "events": 500000,
+      "bytes": 7399472,
+      "first_timestamp": 1540821179.57548,
+      "last_timestamp": 1540821184.954621,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_5_davis_with_gt_13.h5",
+      "events": 500000,
+      "bytes": 7399472,
+      "first_timestamp": 1540821184.954648,
+      "last_timestamp": 1540821192.548016,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_5_davis_with_gt_14.h5",
+      "events": 500000,
+      "bytes": 6873136,
+      "first_timestamp": 1540821192.548027,
+      "last_timestamp": 1540821196.357343,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_5_davis_with_gt_15.h5",
+      "events": 500000,
+      "bytes": 7075888,
+      "first_timestamp": 1540821196.3573442,
+      "last_timestamp": 1540821202.820313,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_5_davis_with_gt_16.h5",
+      "events": 500000,
+      "bytes": 7008304,
+      "first_timestamp": 1540821202.820313,
+      "last_timestamp": 1540821210.258575,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_5_davis_with_gt_17.h5",
+      "events": 500000,
+      "bytes": 7804976,
+      "first_timestamp": 1540821210.258583,
+      "last_timestamp": 1540821216.164234,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_5_davis_with_gt_18.h5",
+      "events": 500000,
+      "bytes": 7211056,
+      "first_timestamp": 1540821216.164258,
+      "last_timestamp": 1540821224.1492531,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_5_davis_with_gt_19.h5",
+      "events": 500000,
+      "bytes": 6924336,
+      "first_timestamp": 1540821224.14939,
+      "last_timestamp": 1540821227.765335,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_5_davis_with_gt_2.h5",
+      "events": 500000,
+      "bytes": 7278640,
+      "first_timestamp": 1540821113.171935,
+      "last_timestamp": 1540821129.562526,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_5_davis_with_gt_3.h5",
+      "events": 500000,
+      "bytes": 7178288,
+      "first_timestamp": 1540821129.562532,
+      "last_timestamp": 1540821136.504997,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_5_davis_with_gt_4.h5",
+      "events": 500000,
+      "bytes": 6856752,
+      "first_timestamp": 1540821136.505026,
+      "last_timestamp": 1540821139.447689,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_5_davis_with_gt_5.h5",
+      "events": 500000,
+      "bytes": 6891568,
+      "first_timestamp": 1540821139.44769,
+      "last_timestamp": 1540821145.5066571,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_5_davis_with_gt_6.h5",
+      "events": 500000,
+      "bytes": 6975536,
+      "first_timestamp": 1540821145.506668,
+      "last_timestamp": 1540821152.896141,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_5_davis_with_gt_7.h5",
+      "events": 500000,
+      "bytes": 7110704,
+      "first_timestamp": 1540821152.896146,
+      "last_timestamp": 1540821156.412408,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_5_davis_with_gt_8.h5",
+      "events": 500000,
+      "bytes": 7026736,
+      "first_timestamp": 1540821156.412416,
+      "last_timestamp": 1540821161.010582,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_5_davis_with_gt_9.h5",
+      "events": 500000,
+      "bytes": 6856752,
+      "first_timestamp": 1540821161.010597,
+      "last_timestamp": 1540821167.033518,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_6_davis_with_gt_0.h5",
+      "events": 500000,
+      "bytes": 7348272,
+      "first_timestamp": 1540821359.0425956,
+      "last_timestamp": 1540821371.5844285,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_6_davis_with_gt_1.h5",
+      "events": 500000,
+      "bytes": 7075888,
+      "first_timestamp": 1540821371.5845165,
+      "last_timestamp": 1540821375.0988007,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_6_davis_with_gt_10.h5",
+      "events": 500000,
+      "bytes": 6873136,
+      "first_timestamp": 1540821424.6076136,
+      "last_timestamp": 1540821427.1730807,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_6_davis_with_gt_2.h5",
+      "events": 500000,
+      "bytes": 7043120,
+      "first_timestamp": 1540821375.0988266,
+      "last_timestamp": 1540821389.1703076,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_6_davis_with_gt_3.h5",
+      "events": 500000,
+      "bytes": 6940720,
+      "first_timestamp": 1540821389.1703136,
+      "last_timestamp": 1540821393.7774656,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_6_davis_with_gt_4.h5",
+      "events": 500000,
+      "bytes": 6940720,
+      "first_timestamp": 1540821393.7774687,
+      "last_timestamp": 1540821400.3157387,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_6_davis_with_gt_5.h5",
+      "events": 500000,
+      "bytes": 6940720,
+      "first_timestamp": 1540821400.3157456,
+      "last_timestamp": 1540821405.9041455,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_6_davis_with_gt_6.h5",
+      "events": 500000,
+      "bytes": 6991920,
+      "first_timestamp": 1540821405.9042416,
+      "last_timestamp": 1540821411.0845926,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_6_davis_with_gt_7.h5",
+      "events": 500000,
+      "bytes": 6940720,
+      "first_timestamp": 1540821411.0845957,
+      "last_timestamp": 1540821416.4619267,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_6_davis_with_gt_8.h5",
+      "events": 500000,
+      "bytes": 6856752,
+      "first_timestamp": 1540821416.4619277,
+      "last_timestamp": 1540821421.7319827,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_6_davis_with_gt_9.h5",
+      "events": 500000,
+      "bytes": 6907952,
+      "first_timestamp": 1540821421.7319837,
+      "last_timestamp": 1540821424.6076136,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_7_davis_with_gt_0.h5",
+      "events": 500000,
+      "bytes": 7602224,
+      "first_timestamp": 1540821816.443598,
+      "last_timestamp": 1540821828.722699,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_7_davis_with_gt_1.h5",
+      "events": 500000,
+      "bytes": 7194672,
+      "first_timestamp": 1540821828.722713,
+      "last_timestamp": 1540821832.171739,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_7_davis_with_gt_10.h5",
+      "events": 500000,
+      "bytes": 7415856,
+      "first_timestamp": 1540821880.964417,
+      "last_timestamp": 1540821883.628735,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_7_davis_with_gt_11.h5",
+      "events": 500000,
+      "bytes": 7059504,
+      "first_timestamp": 1540821883.628738,
+      "last_timestamp": 1540821887.04337,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_7_davis_with_gt_12.h5",
+      "events": 500000,
+      "bytes": 6959152,
+      "first_timestamp": 1540821887.043371,
+      "last_timestamp": 1540821890.248485,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_7_davis_with_gt_13.h5",
+      "events": 500000,
+      "bytes": 7448624,
+      "first_timestamp": 1540821890.248489,
+      "last_timestamp": 1540821896.660556,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_7_davis_with_gt_14.h5",
+      "events": 500000,
+      "bytes": 6991920,
+      "first_timestamp": 1540821896.660572,
+      "last_timestamp": 1540821906.436393,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_7_davis_with_gt_15.h5",
+      "events": 500000,
+      "bytes": 7127088,
+      "first_timestamp": 1540821906.436394,
+      "last_timestamp": 1540821908.612548,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_7_davis_with_gt_16.h5",
+      "events": 500000,
+      "bytes": 7161904,
+      "first_timestamp": 1540821908.6125531,
+      "last_timestamp": 1540821912.18949,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_7_davis_with_gt_17.h5",
+      "events": 500000,
+      "bytes": 7026736,
+      "first_timestamp": 1540821912.189516,
+      "last_timestamp": 1540821919.589411,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_7_davis_with_gt_2.h5",
+      "events": 500000,
+      "bytes": 7211056,
+      "first_timestamp": 1540821832.1717541,
+      "last_timestamp": 1540821835.224125,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_7_davis_with_gt_3.h5",
+      "events": 500000,
+      "bytes": 7211056,
+      "first_timestamp": 1540821835.224126,
+      "last_timestamp": 1540821848.314748,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_7_davis_with_gt_4.h5",
+      "events": 500000,
+      "bytes": 6805552,
+      "first_timestamp": 1540821848.314751,
+      "last_timestamp": 1540821853.303317,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_7_davis_with_gt_5.h5",
+      "events": 500000,
+      "bytes": 7008304,
+      "first_timestamp": 1540821853.303318,
+      "last_timestamp": 1540821858.030189,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_7_davis_with_gt_6.h5",
+      "events": 500000,
+      "bytes": 7161904,
+      "first_timestamp": 1540821858.030191,
+      "last_timestamp": 1540821863.038762,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_7_davis_with_gt_7.h5",
+      "events": 500000,
+      "bytes": 7094320,
+      "first_timestamp": 1540821863.0387821,
+      "last_timestamp": 1540821871.745871,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_7_davis_with_gt_8.h5",
+      "events": 500000,
+      "bytes": 7026736,
+      "first_timestamp": 1540821871.7458801,
+      "last_timestamp": 1540821877.0702121,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_7_davis_with_gt_9.h5",
+      "events": 500000,
+      "bytes": 7161904,
+      "first_timestamp": 1540821877.070221,
+      "last_timestamp": 1540821880.964415,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_8_davis_0.h5",
+      "events": 500000,
+      "bytes": 7211056,
+      "first_timestamp": 1540822407.9081542,
+      "last_timestamp": 1540822418.0459073,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_8_davis_1.h5",
+      "events": 500000,
+      "bytes": 7127088,
+      "first_timestamp": 1540822418.0459123,
+      "last_timestamp": 1540822421.8029842,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_8_davis_10.h5",
+      "events": 500000,
+      "bytes": 7602224,
+      "first_timestamp": 1540822473.0505352,
+      "last_timestamp": 1540822480.0833392,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_8_davis_11.h5",
+      "events": 500000,
+      "bytes": 7297072,
+      "first_timestamp": 1540822480.0833552,
+      "last_timestamp": 1540822486.594108,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_8_davis_12.h5",
+      "events": 500000,
+      "bytes": 6959152,
+      "first_timestamp": 1540822486.5941103,
+      "last_timestamp": 1540822493.571103,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_8_davis_13.h5",
+      "events": 500000,
+      "bytes": 8246064,
+      "first_timestamp": 1540822493.571113,
+      "last_timestamp": 1540822499.603347,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_8_davis_14.h5",
+      "events": 500000,
+      "bytes": 6940720,
+      "first_timestamp": 1540822499.6033611,
+      "last_timestamp": 1540822504.3708572,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_8_davis_15.h5",
+      "events": 500000,
+      "bytes": 6907952,
+      "first_timestamp": 1540822504.370866,
+      "last_timestamp": 1540822512.0196621,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_8_davis_16.h5",
+      "events": 500000,
+      "bytes": 7094320,
+      "first_timestamp": 1540822512.019663,
+      "last_timestamp": 1540822514.6072183,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_8_davis_17.h5",
+      "events": 500000,
+      "bytes": 7262256,
+      "first_timestamp": 1540822514.6072292,
+      "last_timestamp": 1540822521.815601,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_8_davis_18.h5",
+      "events": 500000,
+      "bytes": 6891568,
+      "first_timestamp": 1540822521.8156042,
+      "last_timestamp": 1540822534.824201,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_8_davis_19.h5",
+      "events": 500000,
+      "bytes": 7364656,
+      "first_timestamp": 1540822534.824201,
+      "last_timestamp": 1540822537.815946,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_8_davis_2.h5",
+      "events": 500000,
+      "bytes": 16026928,
+      "first_timestamp": 1540822421.8029962,
+      "last_timestamp": 1540822436.5767622,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_8_davis_20.h5",
+      "events": 500000,
+      "bytes": 7262256,
+      "first_timestamp": 1540822537.8159482,
+      "last_timestamp": 1540822542.1880221,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_8_davis_21.h5",
+      "events": 500000,
+      "bytes": 7262256,
+      "first_timestamp": 1540822542.188023,
+      "last_timestamp": 1540822547.3413112,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_8_davis_22.h5",
+      "events": 500000,
+      "bytes": 7467056,
+      "first_timestamp": 1540822547.3413181,
+      "last_timestamp": 1540822555.695944,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_8_davis_23.h5",
+      "events": 500000,
+      "bytes": 7821360,
+      "first_timestamp": 1540822555.6959662,
+      "last_timestamp": 1540822563.3963733,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_8_davis_3.h5",
+      "events": 500000,
+      "bytes": 7161904,
+      "first_timestamp": 1540822436.576821,
+      "last_timestamp": 1540822441.6738772,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_8_davis_4.h5",
+      "events": 500000,
+      "bytes": 7127088,
+      "first_timestamp": 1540822441.6738892,
+      "last_timestamp": 1540822446.2086632,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_8_davis_5.h5",
+      "events": 500000,
+      "bytes": 7075888,
+      "first_timestamp": 1540822446.208666,
+      "last_timestamp": 1540822450.8615801,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_8_davis_6.h5",
+      "events": 500000,
+      "bytes": 7143472,
+      "first_timestamp": 1540822450.8615992,
+      "last_timestamp": 1540822453.720029,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_8_davis_7.h5",
+      "events": 500000,
+      "bytes": 7229488,
+      "first_timestamp": 1540822453.7200332,
+      "last_timestamp": 1540822460.3697782,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_8_davis_8.h5",
+      "events": 500000,
+      "bytes": 7516208,
+      "first_timestamp": 1540822460.3697913,
+      "last_timestamp": 1540822467.1720152,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_8_davis_9.h5",
+      "events": 500000,
+      "bytes": 7094320,
+      "first_timestamp": 1540822467.1720152,
+      "last_timestamp": 1540822473.0505292,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_9_davis_with_gt_0.h5",
+      "events": 500000,
+      "bytes": 7348272,
+      "first_timestamp": 1540822817.2227867,
+      "last_timestamp": 1540822829.0825236,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_9_davis_with_gt_1.h5",
+      "events": 500000,
+      "bytes": 6940720,
+      "first_timestamp": 1540822829.0825336,
+      "last_timestamp": 1540822833.7579708,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_9_davis_with_gt_10.h5",
+      "events": 500000,
+      "bytes": 6991920,
+      "first_timestamp": 1540822874.4166307,
+      "last_timestamp": 1540822878.3540137,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_9_davis_with_gt_11.h5",
+      "events": 500000,
+      "bytes": 7094320,
+      "first_timestamp": 1540822878.3540246,
+      "last_timestamp": 1540822882.1544547,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_9_davis_with_gt_12.h5",
+      "events": 500000,
+      "bytes": 7194672,
+      "first_timestamp": 1540822882.1544557,
+      "last_timestamp": 1540822886.7783127,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_9_davis_with_gt_2.h5",
+      "events": 500000,
+      "bytes": 12075312,
+      "first_timestamp": 1540822833.7579727,
+      "last_timestamp": 1540822846.7037928,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_9_davis_with_gt_3.h5",
+      "events": 500000,
+      "bytes": 7399472,
+      "first_timestamp": 1540822846.7038357,
+      "last_timestamp": 1540822851.7833347,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_9_davis_with_gt_4.h5",
+      "events": 500000,
+      "bytes": 7313456,
+      "first_timestamp": 1540822851.7833357,
+      "last_timestamp": 1540822854.6827986,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_9_davis_with_gt_5.h5",
+      "events": 500000,
+      "bytes": 7059504,
+      "first_timestamp": 1540822854.6828027,
+      "last_timestamp": 1540822857.8313246,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_9_davis_with_gt_6.h5",
+      "events": 500000,
+      "bytes": 7211056,
+      "first_timestamp": 1540822857.8313258,
+      "last_timestamp": 1540822863.2161906,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_9_davis_with_gt_7.h5",
+      "events": 500000,
+      "bytes": 7211056,
+      "first_timestamp": 1540822863.2161956,
+      "last_timestamp": 1540822866.0479116,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_9_davis_with_gt_8.h5",
+      "events": 500000,
+      "bytes": 6924336,
+      "first_timestamp": 1540822866.0479126,
+      "last_timestamp": 1540822869.5301228,
+      "flow_maps": {}
+    },
+    {
+      "file": "indoor_forward_9_davis_with_gt_9.h5",
+      "events": 500000,
+      "bytes": 7161904,
+      "first_timestamp": 1540822869.5301256,
+      "last_timestamp": 1540822874.4166248,
+      "flow_maps": {}
+    }
+  ],
+  "mvsec": [
+    {
+      "file": "outdoor_day1_data.h5",
+      "events": 4569941,
+      "bytes": 2638402608,
+      "first_timestamp": 1506118119.1955414,
+      "last_timestamp": 1506118137.1955314,
+      "flow_maps": {
+        "flow_dt1": 819,
+        "flow_dt4": 204
+      }
+    },
+    {
+      "file": "indoor_flying1_data.h5",
+      "events": 10717746,
+      "bytes": 7530708080,
+      "first_timestamp": 1504645177.4254112,
+      "last_timestamp": 1504645247.7151432,
+      "flow_maps": {
+        "flow_dt1": 2203,
+        "flow_dt4": 550
+      }
+    },
+    {
+      "file": "indoor_flying2_data.h5",
+      "events": 19447381,
+      "bytes": 9186419312,
+      "first_timestamp": 1504645267.7161982,
+      "last_timestamp": 1504645352.6551223,
+      "flow_maps": {
+        "flow_dt1": 2662,
+        "flow_dt4": 665
+      }
+    },
+    {
+      "file": "indoor_flying3_data.h5",
+      "events": 18390617,
+      "bytes": 10136728624,
+      "first_timestamp": 1504645443.0855954,
+      "last_timestamp": 1504645537.1153133,
+      "flow_maps": {
+        "flow_dt1": 2949,
+        "flow_dt4": 737
+      }
+    }
+  ],
+  "recording_groups": {
+    "indoor_forward_10_davis": 9,
+    "indoor_forward_11_davis": 20,
+    "indoor_forward_12_davis": 12,
+    "indoor_forward_3_davis": 13,
+    "indoor_forward_5_davis": 20,
+    "indoor_forward_6_davis": 11,
+    "indoor_forward_7_davis": 18,
+    "indoor_forward_8_davis": 24,
+    "indoor_forward_9_davis": 13
+  },
+  "events_per_epoch_all": 70000000,
+  "matched_split_counts": {
+    "train": 116,
+    "val": 24,
+    "test": 0
+  },
+  "matched_validation_groups": [
+    "indoor_forward_8_davis"
+  ],
+  "checks": "All event-column lengths, 1k endpoint samples, all GT timestamps, endpoint GT shapes",
+  "limits": "Not a full archive checksum or full event/pixel scan",
+  "protocols": {
+    "paper_reproduction": "all 140 crops; no held-out validation",
+    "matched_comparison": "recording-level validation; MVSEC remains test-only"
+  }
+}

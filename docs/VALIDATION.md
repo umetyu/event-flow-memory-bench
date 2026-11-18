@@ -30,4 +30,6 @@ LayerSeg上流はaffine_gridのalign_cornersを省略しており、現行PyTorc
 
 上流には大きな実験ファイルも追跡されているため、アダプターは全working treeを走査せず、読み込むPythonファイルのGit blobハッシュを固定コミットと照合します。
 
-**未実施:** 実配布データ・重みの取得と検査、MVSEC論文数値再現、全条件GPU学習、AffineObjectsのGT対応確認と実評価。ここに実データの性能数値は掲載していません。
+2026-11-18にIzarの著者配布UZH 140本とMVSEC 4収録のメタデータ・端点を検査し、元記録単位の116/24 splitを生成しました。FireNet / RecEVFlowNetは実UZHとV100上で各120更新（20 warmup＋100計測）、有限loss・勾配のチェック付きで完走しました。詳細は[IZAR.md](IZAR.md)を参照してください。
+
+**未実施:** 全条件の本学習、AffineObjectsのGT対応確認と実評価。短い速度計測は学習完了や精度再現を意味しません。
