@@ -41,3 +41,9 @@ LayerSeg上流はaffine_gridのalign_cornersを省略しており、現行PyTorc
 Izar job 3256468で全36テストを実行し、35成功・任意のLayerSeg接続1件skipでした。新規11テストは9-bin補間、極性・境界splat、双方向timestamp損失、有限差分との勾配一致、smoothness、単位換算、モデル全段のbackward、設定制約、再開の同一性、smokeの扱い、MVSEC評価の因果性を確認します。
 
 同じjobで実UZHを20更新し、1本の検証データの16窓を評価しました。loss・勾配・RSATが有限で完了し、forward warp後の画面内イベント割合は約0.9928でした。[動作確認の数値](../results/2026-11-18-izar/zhu2019-smoke.json)。この短い確認のRSATは1.0であり、精度向上・収束はまだ示していません。[実装の選択と差分](ZHU2019.md)を参照してください。
+
+## 追加4モデルの実評価
+
+Izar job array 3256690で配布RNN/Leakyの4モデル・32条件を完走し、全評価区間でAEEと外れ値率が有限であることを確認しました。LeakyRecEVFlowNet・RNNFireNet・LeakyFireNetの24条件は既存許容差内、RNNRecEVFlowNetは論文値に未一致です。[結果と判定](../results/2026-11-18-izar/comparison.md)。モデル一覧を切り替えるSlurmスクリプトの構文、参照表の48行の一意性、GitHub CIの成功も確認しました。
+
+[56]はjob 3256469で100 epochとMVSEC dt1/dt4評価を完了しました。検証RSAT約1のままで、精度改善の確認には至っていません。工程の完了と論文再現成功を区別します。

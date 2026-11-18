@@ -5,15 +5,15 @@
 | 用途 | 行 | 論文の表記 | この基盤での識別 | 状態 |
 |---|---:|---|---|---|
 | 論文報告値による参考比較 | 2 | EV-FlowNet* [56] | zhu2019 / published_reference_not_reproduced | 8条件の報告値を収録済み。当プロジェクトで推論した値ではない |
-| 追加の再学習比較 | 2と同じ手法 | EV-FlowNet* [56] | zhu2019-uzh（再実装 → UZH学習 → MVSEC評価） | 再実装済み。テスト・実データ20更新を検証済み。[実行仕様](ZHU2019.md) |
+| 追加の再学習比較 | 2と同じ手法 | EV-FlowNet* [56] | zhu2019-uzh（再実装 → UZH学習 → MVSEC評価） | 100 epoch・MVSEC評価完了。検証RSAT約1で精度改善未確認。[実行仕様](ZHU2019.md) |
 | 主比較 | 4 | EV-FlowNet | RecEVFlowNet / count | 実装済み。配布重み評価済み |
-| 主比較 | 5 | RNN-EV-FlowNet | RNNRecEVFlowNet / count | 実装済み、未学習 |
-| 主比較 | 6 | Leaky-EV-FlowNet | LeakyRecEVFlowNet / count | 実装済み、未学習 |
+| 主比較 | 5 | RNN-EV-FlowNet | RNNRecEVFlowNet / count | 配布重み評価完了。論文AEE最大差1.246 pxで未一致 |
+| 主比較 | 6 | Leaky-EV-FlowNet | LeakyRecEVFlowNet / count | 配布重み評価完了。8条件とも事前許容差内 |
 | 軽量な先行確認 | 11 | FireNet | FireNet / count | 実装済み。配布重み評価済み |
-| 軽量な先行確認 | 12 | RNN-FireNet | RNNFireNet / count | 実装済み、未学習 |
-| 軽量な先行確認 | 13 | Leaky-FireNet | LeakyFireNet / count | 実装済み、未学習 |
+| 軽量な先行確認 | 12 | RNN-FireNet | RNNFireNet / count | 配布重み評価完了。8条件とも事前許容差内 |
+| 軽量な先行確認 | 13 | Leaky-FireNet | LeakyFireNet / count | 配布重み評価完了。8条件とも事前許容差内 |
 
-今回追加で再学習するのは[56]のみです。他モデルは既報値・配布済み重みでの比較を先行し、既存の5条件 × 3 seedsの学習gridはこの段階では投入しません。「未学習」は本基盤で再学習していない意味です。
+今回追加で再学習したのは[56]のみです。他6モデルは配布済み重みで評価し、既存の5条件 × 3 seedsの学習gridはこの段階では投入していません。[全7モデルの比較と未一致条件](../results/2026-11-18-izar/comparison.md)。事前許容差はAEE 0.02 px・外れ値率0.2 percentage pointです。
 
 別途、後続の要因比較用に同じHagenaars実装の非再帰EVFlowNetのcount / 5-bin voxelを保持します。軽量版の対応モデルはFireFlowNetです。[56]をこの既存voxelモデルの別名として扱いません。
 
@@ -28,7 +28,7 @@
 
 2のためにoutdoor_day2をダウンロードする必要はありません。再学習版の実装差分・入力窓・crop解像度・学習量・採点規約を記録し、学習データだけを変えた完全な対照実験とは断定しません。
 
-比較表では1に「論文報告値」「学習: MVSEC outdoor_day2」を明示します。こちらでtestを実行した結果や配布重みを再評価した結果とは扱いません。報告値の要約だけから同じmask・外れ値規約へ再採点はできないため、matched-v1と同条件の優劣・seed平均・分散の計算にも含めません。2の結果は実行完了後に別ラベルで保存します。
+比較表では1に「論文報告値」「学習: MVSEC outdoor_day2」を明示します。こちらでtestを実行した結果や配布重みを再評価した結果とは扱いません。報告値の要約だけから同じmask・外れ値規約へ再採点はできないため、matched-v1と同条件の優劣・seed平均・分散の計算にも含めません。2の結果は再実装の実測値として別ラベルで保存しています。
 
 ## 原論文から確認した条件
 
@@ -52,6 +52,6 @@ Hagenaarsのactive-pixel数で正規化した損失や、既存の5-bin voxel対
 
 著者は[Issue #12の回答](https://github.com/daniilidis-group/EV-FlowNet/issues/12#issuecomment-644892449)で、当時の勤務先の制約から公開対応が難しく、独自再実装なら支援できると説明しています。現在確認できたmaster branchからCVPR 2019の正式実装・配布重みは同定できていません。
 
-再学習版は、論文に基づく再実装として差分を明示して追加します。9-bin入力、双方向timestamp損失、smoothness、出力のpixel/bin単位を検証し、既存のHagenaars損失と5-binモデルをそのまま[56]と呼ぶことはしません。[専用実装・学習設定](ZHU2019.md)を追加し、35テスト成功・任意接続1件skip、Izarで20更新と検証1本の確認を完了しました。精度の検証は本学習・MVSEC評価後に行います。
+再学習版は、論文に基づく再実装として差分を明示して追加しました。9-bin入力、双方向timestamp損失、smoothness、出力のpixel/bin単位を検証し、既存のHagenaars損失と5-binモデルをそのまま[56]と呼ぶことはしません。[専用実装・学習設定](ZHU2019.md)を追加し、35テスト成功・任意接続1件skip、Izarで20更新と検証1本の確認後、100 epochとMVSEC評価を完了しました。検証RSATは約1で、論文精度の再現成功とは判定していません。
 
 [機械可読の仕様](../configs/literature/zhu2019.json)と[原論文の参考値](../configs/literature/zhu2019_table1.csv)を収録しています。後者は当プロジェクトの実測値ではなく、collect対象のresultsとは分離しています。`main` gridは5条件のままです。[56]は専用コマンドで実行し、論文報告値と再実装の実測値を別に記録します。

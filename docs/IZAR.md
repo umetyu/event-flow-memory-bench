@@ -1,8 +1,8 @@
 # Izarでの実行
 
-現在は既報値・配布済み重みで比較し、追加再学習を[56]のUZH学習に限定します。[56]は論文報告値も別条件として保持します。再学習版は実装し、GPUのsmoke job 3256468で全テストと実データ20更新を確認しました。本学習は[専用手順](ZHU2019.md)で行います。[最新の対象](BASELINES.md)。既存5条件gridは後続の要因比較用に保持し、SNNを含む全モデル一括学習は今回の実行範囲に含めません。
+現在は既報値・配布済み重みで比較し、追加再学習を[56]のUZH学習に限定しています。[56]は論文報告値も別条件として保持します。再学習版はsmoke job 3256468の検証後、job 3256469で100 epochとMVSEC評価を完了しましたが、検証RSAT約1で精度改善は未確認です。[専用手順](ZHU2019.md)と[最新の対象](BASELINES.md)。既存5条件gridは後続の要因比較用に保持し、SNNを含む全モデル一括学習は今回の実行範囲に含めません。
 
-Table 1の最上段`EV-FlowNet* [54]`を1行目として数えると、比較対象は2・4・5・6行目、FireNet系は11・12・13行目です。2行目の[56]は「論文報告値（MVSEC outdoor_day2学習）」と「UZHで再学習」の2条件に分け、採点規約も明記します。既存Hagenaars実装の非再帰count / 5-bin voxelは別の要因切り分け用対照です。現時点で配布重み評価と速度計測を完了したのは4行目のRecEVFlowNetと11行目のFireNetです。
+Table 1の最上段`EV-FlowNet* [54]`を1行目として数えると、比較対象は2・4・5・6行目、FireNet系は11・12・13行目です。2行目の[56]は「論文報告値（MVSEC outdoor_day2学習）」と「UZHで再学習」の2条件に分け、採点規約も明記します。既存Hagenaars実装の非再帰count / 5-bin voxelは別の要因切り分け用対照です。配布重み評価は選択した6モデルで完了し、学習速度の短時間計測はRecEVFlowNetとFireNetだけで行いました。
 
 ## 既存データの利用
 
@@ -86,3 +86,11 @@ sbatch --array=0-7%2 scripts/slurm_izar_reproduce.sh
 ## 配布重みの収録確認
 
 著者ZIPにはTable 1のHagenaars 14モデル全てとFireFlowNet系3モデルの計17個のmodel.pthが含まれます。RNNEVFlowNetのparamsはRNNRecEVFlowNet、LeakyEVFlowNetはLeakyRecEVFlowNetであることを確認しました。[56]の重みは含まれません。重みの存在確認と、その重みでの評価完了は区別します。
+
+## RNN・Leakyの4モデルの評価結果
+
+2026-11-18、job array **3256690**で4モデル×dt1/dt4×4収録の32条件を完了しました。ZIPのchecksumを再照合し、必要な4 runのみ展開してstrictな重み読み込みを使用しました。学習・データダウンロードは行っていません。[実行条件と重みhash](../results/2026-11-18-izar/four-model-evaluation.json)。
+
+LeakyRecEVFlowNet・RNNFireNet・LeakyFireNetは全24条件でAEEと外れ値率が事前許容差内でした。RNNRecEVFlowNetはdt1/dt4とも論文比較が不一致で、最大差はAEE 1.245750 px・外れ値率14.681035 percentage pointsです。推論は全区間で有限値を返しましたが、比較判定によって該当2タスクのSlurm終了状態はFAILEDです。これを推論の途中停止や再現成功とは扱いません。原因は未確定です。
+
+先行2モデルを含めた配布6モデルでは48条件中AEE 41条件、外れ値率38条件が許容差内です。[全7モデル（[56]再実装を含む）の比較表](../results/2026-11-18-izar/comparison.md)に全数値と未一致条件を掲載しています。

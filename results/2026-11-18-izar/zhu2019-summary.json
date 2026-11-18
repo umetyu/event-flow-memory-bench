@@ -1,0 +1,160 @@
+[
+  {
+    "protocol": "zhu2019-reimplementation-v1",
+    "result_kind": "paper_based_reimplementation",
+    "training_dataset": "uzh_fpv",
+    "training_manifest_sha256": "683adb3f4aaaa40b1dda03a31ca216ba3ef29c7f411ac47fd1f8391e462241ab",
+    "checkpoint_sha256": "19eedb090d69858cddf7245a734d852cbb85dcda5db7fdca99c89a06395f80c9",
+    "dt": 1,
+    "summary": {
+      "windows": 8313,
+      "aee": 1.7510299702984617,
+      "aee_n": 8313,
+      "aee_invalid": 0,
+      "outlier_pct": 14.677502752703957,
+      "outlier_pct_n": 8313,
+      "outlier_pct_invalid": 0
+    },
+    "sequences": {
+      "outdoor_day1": {
+        "windows": 817,
+        "aee": 0.8662409270626824,
+        "aee_n": 817,
+        "aee_invalid": 0,
+        "outlier_pct": 0.5817042247705364,
+        "outlier_pct_n": 817,
+        "outlier_pct_invalid": 0,
+        "outlier_pct_3px": 0.5817042288747747,
+        "skipped_incomplete_history_or_empty_interval": 1
+      },
+      "indoor_flying1": {
+        "windows": 2148,
+        "aee": 1.29802546304524,
+        "aee_n": 2148,
+        "aee_invalid": 0,
+        "outlier_pct": 4.565897728487863,
+        "outlier_pct_n": 2148,
+        "outlier_pct_invalid": 0,
+        "outlier_pct_3px": 4.565897738146535,
+        "skipped_incomplete_history_or_empty_interval": 54
+      },
+      "indoor_flying2": {
+        "windows": 2529,
+        "aee": 2.2078711003501126,
+        "aee_n": 2529,
+        "aee_invalid": 0,
+        "outlier_pct": 24.180525755800463,
+        "outlier_pct_n": 2529,
+        "outlier_pct_invalid": 0,
+        "outlier_pct_3px": 24.18052575949759,
+        "skipped_incomplete_history_or_empty_interval": 132
+      },
+      "indoor_flying3": {
+        "windows": 2819,
+        "aee": 1.9427912728890708,
+        "aee_n": 2819,
+        "aee_invalid": 0,
+        "outlier_pct": 17.942082325072423,
+        "outlier_pct_n": 2819,
+        "outlier_pct_invalid": 0,
+        "outlier_pct_3px": 17.94208234923278,
+        "skipped_incomplete_history_or_empty_interval": 129
+      }
+    },
+    "evaluation": {
+      "resolution": [
+        256,
+        256
+      ],
+      "flow_unit": "pixels_per_bin",
+      "history_outdoor": 30000,
+      "history_indoor": 15000,
+      "causal": true,
+      "mask": "valid GT AND event in GT interval",
+      "warmup": "require complete input history",
+      "outlier_pct": "EPE>3px AND EPE>5% of GT",
+      "outlier_pct_3px": "EPE>3px",
+      "aggregation": "unweighted mean of valid GT intervals",
+      "matches_hagenaars_upstream_protocol": false
+    }
+  },
+  {
+    "protocol": "zhu2019-reimplementation-v1",
+    "result_kind": "paper_based_reimplementation",
+    "training_dataset": "uzh_fpv",
+    "training_manifest_sha256": "683adb3f4aaaa40b1dda03a31ca216ba3ef29c7f411ac47fd1f8391e462241ab",
+    "checkpoint_sha256": "19eedb090d69858cddf7245a734d852cbb85dcda5db7fdca99c89a06395f80c9",
+    "dt": 4,
+    "summary": {
+      "windows": 2077,
+      "aee": 6.285268173719405,
+      "aee_n": 2077,
+      "aee_invalid": 0,
+      "outlier_pct": 74.12907315003285,
+      "outlier_pct_n": 2077,
+      "outlier_pct_invalid": 0
+    },
+    "sequences": {
+      "outdoor_day1": {
+        "windows": 203,
+        "aee": 3.2427633002473804,
+        "aee_n": 203,
+        "aee_invalid": 0,
+        "outlier_pct": 51.515377162845866,
+        "outlier_pct_n": 203,
+        "outlier_pct_invalid": 0,
+        "outlier_pct_3px": 51.51537695071968,
+        "skipped_incomplete_history_or_empty_interval": 0
+      },
+      "indoor_flying1": {
+        "windows": 537,
+        "aee": 4.904765645995931,
+        "aee_n": 537,
+        "aee_invalid": 0,
+        "outlier_pct": 69.04287030600887,
+        "outlier_pct_n": 537,
+        "outlier_pct_invalid": 0,
+        "outlier_pct_3px": 69.04287016080967,
+        "skipped_incomplete_history_or_empty_interval": 12
+      },
+      "indoor_flying2": {
+        "windows": 632,
+        "aee": 7.794850668834546,
+        "aee_n": 632,
+        "aee_invalid": 0,
+        "outlier_pct": 80.95574212796487,
+        "outlier_pct_n": 632,
+        "outlier_pct_invalid": 0,
+        "outlier_pct_3px": 80.95574195800891,
+        "skipped_incomplete_history_or_empty_interval": 32
+      },
+      "indoor_flying3": {
+        "windows": 705,
+        "aee": 6.859597549307431,
+        "aee_n": 705,
+        "aee_invalid": 0,
+        "outlier_pct": 78.39491204164531,
+        "outlier_pct_n": 705,
+        "outlier_pct_invalid": 0,
+        "outlier_pct_3px": 78.39491180026944,
+        "skipped_incomplete_history_or_empty_interval": 31
+      }
+    },
+    "evaluation": {
+      "resolution": [
+        256,
+        256
+      ],
+      "flow_unit": "pixels_per_bin",
+      "history_outdoor": 30000,
+      "history_indoor": 15000,
+      "causal": true,
+      "mask": "valid GT AND event in GT interval",
+      "warmup": "require complete input history",
+      "outlier_pct": "EPE>3px AND EPE>5% of GT",
+      "outlier_pct_3px": "EPE>3px",
+      "aggregation": "unweighted mean of valid GT intervals",
+      "matches_hagenaars_upstream_protocol": false
+    }
+  }
+]

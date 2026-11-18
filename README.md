@@ -4,15 +4,15 @@
 
 主ベースラインはConvGRU版 **`RecEVFlowNet`**。対照に非再帰`EVFlowNet`のcount / 5-bin voxel、RNN / Leakyのcountを使います。まず同じ組のFireNet系で動作を確認します。論文で「EV-FlowNet」と呼ばれる再帰モデルは、コードでは`RecEVFlowNet`です。
 
-比較対象はTable 1の**2・4・5・6行目**、すなわちEV-FlowNet* [56]（Zhu 2019）、RecEVFlowNet、RNNRecEVFlowNet、LeakyRecEVFlowNetです。現在の段階では既報値・配布重みを使い、**[56]だけ「論文報告値」と「UZHで再学習 → MVSEC」の2条件**を用意します。前者はMVSEC outdoor_day2で学習した報告値、後者はこれから実施する実験として区別します。既存の非再帰count / 5-bin voxelは後続の要因切り分け用対照です。[対象・実装状況](docs/BASELINES.md)。
+比較対象はTable 1の**2・4・5・6行目**、すなわちEV-FlowNet* [56]（Zhu 2019）、RecEVFlowNet、RNNRecEVFlowNet、LeakyRecEVFlowNetです。現在の段階では既報値・配布重みを使い、**[56]だけ「論文報告値」と「UZHで再学習 → MVSEC」の2条件**を用意します。前者はMVSEC outdoor_day2で学習した報告値、後者は本基盤で実施した再実装の実測値として区別します。既存の非再帰count / 5-bin voxelは後続の要因切り分け用対照です。[対象・実装状況](docs/BASELINES.md)。
 
 現在生成・実行できるmain gridは従来の5条件です。[56]の[4収録 × dt1/dt4の報告値](configs/literature/zhu2019_table1.csv)に加え、[UZH再学習用の実装・専用設定](docs/ZHU2019.md)を追加し、テストとGPUでの短時間確認を完了しました。既存gridには含めず、現在は他モデルの再学習gridも投入しません。先行確認用FireNet系を維持し、14モデル一括・SNN実験は実行しません。Hebbian更新則自体は未実装です。
 
 Izar上の著者配布UZH/MVSECを検査し、FireNet / RecEVFlowNetの学習速度を実測済みです。100 epoch・1 seedの推定は約7.0 / 13.5時間。[GPU実行手順と測定条件](docs/IZAR.md)を参照してください。`demo`は合成データによる実装検証です。
 
-配布2モデルのMVSEC評価は完了し、AEEは全16条件で論文との差0.009 px未満でした。外れ値率はdt4の2条件に差が残り、完全再現とは判定していません。[全条件の結果](results/2026-11-18-izar/paper-comparison.csv)。Step 2の既存5条件の一括学習は未投入です。
+配布6モデルのMVSEC評価（4収録×dt1/dt4、計48条件）を完了しました。追加したLeaky-EV-FlowNet・RNN-FireNet・Leaky-FireNetの24条件は全指標が事前許容差内でした。RNN-EV-FlowNetはAEE最大差1.246 pxで未一致、先行2モデルの外れ値率にも2条件の差が残ります。[全7モデルの論文値との比較表](results/2026-11-18-izar/comparison.md)。Step 2の既存5条件の一括学習は未投入です。
 
-2026-11-18に[56]のUZH再学習をIzar job **3256469**で開始しました。V100 1枚・seed 0・100 epochs、開始確認時点で1 epochとcheckpoint保存を確認しています。[実行記録](results/2026-11-18-izar/zhu2019-launch.json)。学習終了後にMVSEC dt1/dt4を自動評価します。これは著者配布実装ではなく、[差分を明記した論文ベースの再実装](docs/ZHU2019.md)です。
+2026-11-18に[56]のUZH再学習をIzar job **3256469**で完了しました。V100 1枚・seed 0・100 epochsの学習は約39.5分、続けてMVSEC dt1/dt4を評価しました。[完了記録](results/2026-11-18-izar/zhu2019-completion.json)と[収録別結果](results/2026-11-18-izar/zhu2019-summary.json)。検証RSATは約1のままで、精度改善や論文再現の成功は確認できていません。これは著者配布実装ではなく、[差分を明記した論文ベースの再実装](docs/ZHU2019.md)です。
 
 ## 実装済み
 
@@ -56,7 +56,7 @@ efbench compare-paper runs/reproduce-dt1.json --output runs/paper-check-dt1.json
 efbench compare-paper runs/reproduce-dt4.json --output runs/paper-check-dt4.json
 ```
 
-`--trust-legacy-pickle`は配布元を確認した古いPythonオブジェクト形式にだけ必要です。state_dictも`--checkpoint`と`--train-config`で読めます。重みがない・不一致の場合は停止し、ランダム重みで続行しません。参照表はRecEVFlowNetとFireNetを収録しています。
+`--trust-legacy-pickle`は配布元を確認した古いPythonオブジェクト形式にだけ必要です。state_dictも`--checkpoint`と`--train-config`で読めます。重みがない・不一致の場合は停止し、ランダム重みで続行しません。参照表はRecEVFlowNet・FireNetと各RNN/Leaky版の6モデルを収録しています。
 
 このモードは元のframe単位入力・指標を保持します。以下の統一比較とは別実験です。[相違点](docs/PROTOCOL.md)を参照してください。
 

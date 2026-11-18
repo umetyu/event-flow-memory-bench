@@ -1,0 +1,72 @@
+{
+  "job_id": 3256690,
+  "project_revision": "53a783755330273283fdf46b8b888ddba770db8d",
+  "protocol": "hagenaars2021-upstream",
+  "action": "distributed_checkpoint_evaluation_only",
+  "runs": [
+    "RNNEVFlowNet",
+    "LeakyEVFlowNet",
+    "RNNFireNet",
+    "LeakyFireNet"
+  ],
+  "dt": [
+    1,
+    4
+  ],
+  "sequences": [
+    "outdoor_day1",
+    "indoor_flying1",
+    "indoor_flying2",
+    "indoor_flying3"
+  ],
+  "max_concurrent_gpus": 2,
+  "expected_conditions": 32,
+  "reference": "configs/paper_reference.csv",
+  "tolerances": {
+    "aee_px": 0.02,
+    "outlier_percentage_points": 0.2
+  },
+  "provenance": {
+    "archive_sha256": "9f65e47509031de116b248d1712fc7eb114145d368da8a1b0caf35151ad9ca1d",
+    "models": [
+      {
+        "run": "RNNEVFlowNet",
+        "model": "RNNRecEVFlowNet",
+        "checkpoint_sha256": "60dbe5af72c01b44a5ce398c4b704f5ec0dab5029c6dfa2b031ca0bb486c1430",
+        "bytes": 94168919
+      },
+      {
+        "run": "LeakyEVFlowNet",
+        "model": "LeakyRecEVFlowNet",
+        "checkpoint_sha256": "056e57daa465ab99178ca818cd51615dc7cebd5b9b0e8c7bce24c82b4c16c540",
+        "bytes": 94187087
+      },
+      {
+        "run": "RNNFireNet",
+        "model": "RNNFireNet",
+        "checkpoint_sha256": "7d2cbf0b4eee89e9751b515fa539070f447f426e518dbd96137712ed44b2c3c9",
+        "bytes": 391206
+      },
+      {
+        "run": "LeakyFireNet",
+        "model": "LeakyFireNet",
+        "checkpoint_sha256": "d844ef752a3b8a852631a085989eb0c6c8f55068350f3480b074cd4ff2223c92",
+        "bytes": 394377
+      }
+    ]
+  },
+  "inference_status": "completed",
+  "completed_conditions": 32,
+  "slurm_accounting": [
+    "3256690_0        FAILED   00:02:12      1:0 ",
+    "3256690_1        FAILED   00:02:12      1:0 ",
+    "3256690_2     COMPLETED   00:02:19      0:0 ",
+    "3256690_3     COMPLETED   00:02:02      0:0 ",
+    "3256690_4     COMPLETED   00:01:46      0:0 ",
+    "3256690_5     COMPLETED   00:01:31      0:0 ",
+    "3256690_6     COMPLETED   00:01:53      0:0 ",
+    "3256690_7     COMPLETED   00:01:37      0:0"
+  ],
+  "comparison_passed_tasks": 6,
+  "comparison_total_tasks": 8
+}
