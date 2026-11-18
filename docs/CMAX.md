@@ -50,3 +50,11 @@ Izarでは専用checkoutで `EFBENCH_PYTHON`, `EFBENCH_MVSEC_MANIFEST` を設定
 各条件に `identity.json`, `environment.json`, `window-XXXXX.json`, `windows.jsonl` を保存し、全区間を処理できたときだけ `completed.json` を作ります。区間ファイルを原子的に保存するため、`--resume` で完了済み区間を安全に飛ばせます。設定・ソース版が違えば再開を拒否します。単一seedのためばらつきを評価した実験ではありません。
 
 結果集計は `python scripts/collect_cmax.py runs/cmax-JOB1 runs/cmax-JOB2 --output runs/cmax-report`。欠損条件を成功扱いせず終了コード1を返します。`--allow-incomplete` を明示すると途中表を生成できます。2022年のBurgers論文報告値は `configs/literature/cmax2022_table1.csv` に保存し、実測と並べますが同条件再現の合否判定には使いません。
+
+## 2026-11-18の実行記録
+
+実装コミットは `ccd9576a6db22dad276d287b048970138b2e2efd`。Izarで42テスト中41成功・1件skip（任意のLayerSeg統合）、GitHub CIも成功しました。小規模MVSECの屋内・屋外、dt1/dt4も正常終了しています。[小規模検証の記録](../results/2026-11-18-izar/cmax-smoke.json)は全系列の精度評価ではありません。
+
+本評価は `3256789`（2018版、16条件、同時1 GPU）、`3256790`（2022版、16条件、同時3 GPU）で開始しました。[開始時点の記録](../results/2026-11-18-izar/cmax-launch.json)。終了後の集計ジョブは `3256791` です。専用checkoutは `/scratch/izar/umetsu/event-flow-memory-bench-cmax`、出力はそれぞれ `runs/cmax-3256789`, `runs/cmax-3256790`、比較表は `runs/cmax-report` に保存します。既存のNN学習checkout・環境は変更していません。
+
+2022版は小規模測定で約39〜46秒/区間でした。約21,000区間を3 GPUで処理する全評価の見込みは約3〜4日ですが、待ち時間や区間の内容で変わります。各条件の壁時間は71時間で、中断時も保存済み区間から再開可能です。**開始記録を完了結果と解釈しないでください。**

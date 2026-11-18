@@ -1,0 +1,99 @@
+{
+  "timestamp_utc": "2026-11-18T10:44:23.500543+00:00",
+  "code_revision": "ccd9576a6db22dad276d287b048970138b2e2efd",
+  "smoke_dependency": "3256784",
+  "patch2018_job": "3256789",
+  "secrets2022_job": "3256790",
+  "report_job": "3256791",
+  "patch2018_concurrency": 1,
+  "secrets2022_concurrency": 3,
+  "total_max_concurrent_gpus": 4,
+  "conditions": 32,
+  "profiles": [
+    "matched1k",
+    "long"
+  ],
+  "full_evaluation_complete": false,
+  "snapshot_utc": "2026-11-18T10:45:21.698894+00:00",
+  "protocol": "cmax-causal-v1",
+  "training_required": false,
+  "tests": {
+    "total": 42,
+    "passed": 41,
+    "skipped": 1,
+    "failed": 0,
+    "job": "3256784_0"
+  },
+  "ci_url": "https://github.com/umetyu/event-flow-memory-bench/actions/runs/44287960317",
+  "ci_conclusion": "success",
+  "data_downloaded": false,
+  "expected_sequences": [
+    "outdoor_day1",
+    "indoor_flying1",
+    "indoor_flying2",
+    "indoor_flying3"
+  ],
+  "dts": [
+    1,
+    4
+  ],
+  "scheduler_snapshot": [
+    "3256790_[19-31%3]|PENDING|0:00|JobArrayTaskLimit",
+    "3256789_[1-15%1]|PENDING|0:00|JobArrayTaskLimit",
+    "3256791|PENDING|0:00|Dependency",
+    "3256789_0|RUNNING|0:36|None",
+    "3256790_16|RUNNING|0:36|None",
+    "3256790_17|RUNNING|0:36|None",
+    "3256790_18|RUNNING|0:36|None"
+  ],
+  "progress_snapshot": [
+    {
+      "condition": "patch2018-matched1k-outdoor_day1-dt1",
+      "completed_windows": 88,
+      "config_sha256": "2803e513372d975e2543ce6cfd78d8ddf74b9ee65c35408171162e7c602da679",
+      "source_sha256": {
+        "src/event_flow_bench/cmax.py": "665d7795cfd6ed5c082f6abfc9ceb90eba0f0849f5bda0e4627cc8d232897d38",
+        "scripts/run_cmax.py": "e49c56009ffb00c02c04f0dedb6126a76a354c5f02d40a1bfdbf1f97a7fb5da8",
+        "src/event_flow_bench/data.py": "6a4f14840b75308d7ef961067724d905092938e35d73210cb1c19fdcdbef9717",
+        "src/event_flow_bench/metrics.py": "d0c43a011da6d0591e46da3b59fc14d61e49c92351958949e947d336cf655d43"
+      },
+      "full_condition_complete": false
+    },
+    {
+      "condition": "secrets2022-matched1k-indoor_flying1-dt1",
+      "completed_windows": 0,
+      "config_sha256": "2803e513372d975e2543ce6cfd78d8ddf74b9ee65c35408171162e7c602da679",
+      "source_sha256": {
+        "src/event_flow_bench/cmax.py": "665d7795cfd6ed5c082f6abfc9ceb90eba0f0849f5bda0e4627cc8d232897d38",
+        "scripts/run_cmax.py": "e49c56009ffb00c02c04f0dedb6126a76a354c5f02d40a1bfdbf1f97a7fb5da8",
+        "src/event_flow_bench/data.py": "6a4f14840b75308d7ef961067724d905092938e35d73210cb1c19fdcdbef9717",
+        "src/event_flow_bench/metrics.py": "d0c43a011da6d0591e46da3b59fc14d61e49c92351958949e947d336cf655d43"
+      },
+      "full_condition_complete": false
+    },
+    {
+      "condition": "secrets2022-matched1k-outdoor_day1-dt1",
+      "completed_windows": 0,
+      "config_sha256": "2803e513372d975e2543ce6cfd78d8ddf74b9ee65c35408171162e7c602da679",
+      "source_sha256": {
+        "src/event_flow_bench/cmax.py": "665d7795cfd6ed5c082f6abfc9ceb90eba0f0849f5bda0e4627cc8d232897d38",
+        "scripts/run_cmax.py": "e49c56009ffb00c02c04f0dedb6126a76a354c5f02d40a1bfdbf1f97a7fb5da8",
+        "src/event_flow_bench/data.py": "6a4f14840b75308d7ef961067724d905092938e35d73210cb1c19fdcdbef9717",
+        "src/event_flow_bench/metrics.py": "d0c43a011da6d0591e46da3b59fc14d61e49c92351958949e947d336cf655d43"
+      },
+      "full_condition_complete": false
+    },
+    {
+      "condition": "secrets2022-matched1k-outdoor_day1-dt4",
+      "completed_windows": 0,
+      "config_sha256": "2803e513372d975e2543ce6cfd78d8ddf74b9ee65c35408171162e7c602da679",
+      "source_sha256": {
+        "src/event_flow_bench/cmax.py": "665d7795cfd6ed5c082f6abfc9ceb90eba0f0849f5bda0e4627cc8d232897d38",
+        "scripts/run_cmax.py": "e49c56009ffb00c02c04f0dedb6126a76a354c5f02d40a1bfdbf1f97a7fb5da8",
+        "src/event_flow_bench/data.py": "6a4f14840b75308d7ef961067724d905092938e35d73210cb1c19fdcdbef9717",
+        "src/event_flow_bench/metrics.py": "d0c43a011da6d0591e46da3b59fc14d61e49c92351958949e947d336cf655d43"
+      },
+      "full_condition_complete": false
+    }
+  ]
+}
