@@ -1,0 +1,506 @@
+{
+  "generated_utc": "2026-11-18T13:32:28.045923+00:00",
+  "job_id": 3257017,
+  "protocol": "requested-four-method-figure-v1",
+  "manifest_sha256": "abc131fa349053432531c19e6ce94628c56643ea3fee1a8f5eb3790b50e7c5eb",
+  "sampling": {
+    "rule": "first GT interval whose start event index >= anchor",
+    "anchor_events": 500000,
+    "chosen_using_predictions": false
+  },
+  "script_sha256": "27bd22d0b1920e3c5e9ccc21e784528f3fb51d87b7a2b564aca49753142bd282",
+  "torch": "2.5.1+cu121",
+  "pending_panels": {
+    "evflownet_count": {
+      "label": "学習中",
+      "flow_displayed": false
+    },
+    "shiba_cmax": {
+      "label": "最適化・評価中",
+      "training_required": false,
+      "flow_displayed": false
+    }
+  },
+  "limitations": [
+    "Different input event counts and training setups; not an isolated architecture comparison.",
+    "[56]-type model is a local reimplementation; its validation RSAT remained near 1, so reproduction success is unconfirmed.",
+    "Only two estimated flow fields are shown; pending panels contain no prediction arrays.",
+    "Dense figures use GT-valid pixels; supplementary event-masked figures use GT-valid AND event pixels.",
+    "AEE in metadata is per selected interval, not a full-sequence result."
+  ],
+  "render": {
+    "script_sha256": "27bd22d0b1920e3c5e9ccc21e784528f3fb51d87b7a2b564aca49753142bd282",
+    "font": "ヒラギノ角ゴシック W3.ttc",
+    "files": {
+      "comparison-dt1-eventmasked.png": "b3e2d404cb2ca3fedab4fa48d089af668930ea1e33ad7453fbef6c25c4d23749",
+      "comparison-dt1.png": "c6fcf51a8379b5b8838b809e364b1f7615aacd0d05d6a030a20c516f34253d38",
+      "comparison-dt4-eventmasked.png": "17c5bb3a5ac90eb3cb7160ec2dbeff524dc85fe2d0d92afd90eae2d9cab70b94",
+      "comparison-dt4.png": "e175328ed325500ed353b24992a3bba93078915432b03b8da81f42ed04a3434c",
+      "detail-indoor_flying2-dt1-eventmasked.png": "d541bb194eb2e858ba5edb2280a37284ce959ac57878b8fcdc0bc168d965548b",
+      "detail-indoor_flying2-dt1.png": "fe8b146079c4082ae16ea20cfab201770bc2b4c3b28fb97f711b560533cc0b2b",
+      "detail-indoor_flying2-dt4-eventmasked.png": "88b6f66463d01e16b6789af808086945fbfabdbb4419bd28910282116ea70b27",
+      "detail-indoor_flying2-dt4.png": "69689a2e31c65189a6e546901d3b90ea9a32a8eca328e76208a3aaf6f513aa05",
+      "comparison-dt1-eventmasked.svg": "b76926b93fc3429f8b3c00cdffa8731449e27c29f62821e4f3b20df1a48b33ff",
+      "comparison-dt1.svg": "f3ec34f16fd68066b3dd33ab6793e5220fc89fe1ff6f73f65e242bcde3df2b26",
+      "comparison-dt4-eventmasked.svg": "45c6180fba7e478a062fd7edeefa2a38473f6d629a0633310b3b136347bc9632",
+      "comparison-dt4.svg": "c675d0675898ecce78a1c79e67378c9923abd7942415b46d652ea59c90e3ef09",
+      "detail-indoor_flying2-dt1-eventmasked.svg": "613646887d2528e90d72282dedd83a4e2c585219b2cbdd2049df03cd2927abea",
+      "detail-indoor_flying2-dt1.svg": "ae57ed6e7604c470e8683ed37c2db2608f1bdbcf957fc7fdb89da3cda4c1bbe4",
+      "detail-indoor_flying2-dt4-eventmasked.svg": "eec8a6780e2628bef654b796ab28814a1f4afb9270e080f40fa3edd02aaeeda1",
+      "detail-indoor_flying2-dt4.svg": "d2731d8d906af6f24a49b9c85ff2b929f4aa641aa5a9f89bdd5aa89073335c39"
+    }
+  },
+  "verification": {
+    "examples_verified": 8,
+    "reference_gt_and_convgru_arrays_identical": true,
+    "nine_bin_unit_conversion_verified": true,
+    "causal_input_windows_verified": true,
+    "dense_and_event_mask_aee_independently_recomputed": true,
+    "pending_panels_have_no_flow_arrays": true,
+    "japanese_labels_visually_checked": true
+  },
+  "convgru_source": {
+    "metadata_sha256": "ff91c09f4b92518236a4fce4e9e5c971a987a100f5e2d0cda6ab1a1be70c9a10",
+    "inference_settings": {
+      "history_events": 1000,
+      "stride_events": 1000,
+      "sequence_reset": "at sequence start",
+      "state_warmup": "entire prefix from event 0",
+      "hot_pixel_filter": false,
+      "flow_scale": 128,
+      "displacement_formula": "network_output * 128 * GT_duration / full_1k_input_duration",
+      "chunk_alignment": "full nonoverlapping 1k chunks ending at selected GT endpoint; only first warmup chunk may be short",
+      "temporal_assumption": "final-input average velocity held constant over GT interval"
+    },
+    "source_script_sha256": "7bb7aebbb8fd8869c34b7b8e80ffd9ce35c323ddc392f047370c2a3e87f7cda8",
+    "checkpoint": {
+      "sha256": "5adb204b675a556cd292661236c45f742c2d629b9e04e3859ee482004bb0d8fe",
+      "model": "RecEVFlowNet"
+    }
+  },
+  "voxel9_checkpoint": {
+    "sha256": "19eedb090d69858cddf7245a734d852cbb85dcda5db7fdca99c89a06395f80c9",
+    "best_checkpoint_epoch": 24,
+    "training_run_epochs": 100,
+    "training_complete": true,
+    "best_validation_rsat": 0.9999999981373549,
+    "manifest_sha256": "683adb3f4aaaa40b1dda03a31ca216ba3ef29c7f411ac47fd1f8391e462241ab",
+    "kind": "paper-based reimplementation, not author checkpoint",
+    "model": {
+      "num_bins": 9,
+      "base_num_channels": 32,
+      "kernel_size": 3
+    }
+  },
+  "examples": [
+    {
+      "sequence": "outdoor_day1",
+      "dt": 1,
+      "gt_interval_index": 74,
+      "timestamp_start": 1506118120.8462565,
+      "timestamp_end": 1506118120.8682165,
+      "event_time_origin": 1506118119.1955414,
+      "relative_start_seconds": 1.6507151126861572,
+      "relative_end_seconds": 1.6726751327514648,
+      "start_event": 503693,
+      "end_event": 509636,
+      "anchor_events": 500000,
+      "gt_seconds": 0.021960020065307617,
+      "convgru_input_events": 1000,
+      "convgru_input_seconds": 0.004332065582275391,
+      "voxel9_input_events": 30000,
+      "voxel9_input_start_event": 479636,
+      "voxel9_input_seconds": 0.15302205085754395,
+      "reference_npz_sha256": "848623bba51381101f0d82b58130d4bb363d9234d065dd1f7906e1f12ba5b3b6",
+      "color_max_px": 5.0,
+      "event_metrics": {
+        "convgru_flow": {
+          "aee": 0.821584939956665,
+          "outlier_pct": 0.23011176857330704,
+          "valid_pixels": 3042
+        },
+        "voxel9_flow": {
+          "aee": 0.3762766420841217,
+          "outlier_pct": 0.0,
+          "valid_pixels": 3042
+        }
+      },
+      "dense_metrics": {
+        "convgru_flow": {
+          "aee": 1.9343806505203247,
+          "outlier_pct": 22.81465746149761,
+          "valid_pixels": 28245
+        },
+        "voxel9_flow": {
+          "aee": 0.5407729744911194,
+          "outlier_pct": 0.0,
+          "valid_pixels": 28245
+        }
+      },
+      "arrays_file": "outdoor_day1-dt1.npz",
+      "npz_sha256": "5be3da669597dc274cb3115a579722cb261414a887a2701963ed74bc96b786c9",
+      "voxel9_magnitude_px": {
+        "median": 0.0002252328849863261,
+        "max": 0.0004706769541371614
+      }
+    },
+    {
+      "sequence": "indoor_flying1",
+      "dt": 1,
+      "gt_interval_index": 148,
+      "timestamp_start": 1504645182.1961334,
+      "timestamp_end": 1504645182.2279923,
+      "event_time_origin": 1504645177.4254112,
+      "relative_start_seconds": 4.770722150802612,
+      "relative_end_seconds": 4.802581071853638,
+      "start_event": 500035,
+      "end_event": 506456,
+      "anchor_events": 500000,
+      "gt_seconds": 0.03185892105102539,
+      "convgru_input_events": 1000,
+      "convgru_input_seconds": 0.005827903747558594,
+      "voxel9_input_events": 15000,
+      "voxel9_input_start_event": 491456,
+      "voxel9_input_seconds": 0.0727529525756836,
+      "reference_npz_sha256": "394a3b7f500af3ccf10c83946fc102385c38c5d8d6722abeeedf3f9254723ef0",
+      "color_max_px": 5.0,
+      "event_metrics": {
+        "convgru_flow": {
+          "aee": 1.9430969953536987,
+          "outlier_pct": 7.6827242524916945,
+          "valid_pixels": 2408
+        },
+        "voxel9_flow": {
+          "aee": 1.3137311935424805,
+          "outlier_pct": 0.24916943521594684,
+          "valid_pixels": 2408
+        }
+      },
+      "dense_metrics": {
+        "convgru_flow": {
+          "aee": 2.7408180236816406,
+          "outlier_pct": 37.970590840641336,
+          "valid_pixels": 45156
+        },
+        "voxel9_flow": {
+          "aee": 1.2213945388793945,
+          "outlier_pct": 0.13508725307821773,
+          "valid_pixels": 45156
+        }
+      },
+      "arrays_file": "indoor_flying1-dt1.npz",
+      "npz_sha256": "7bd03ebf9f4ba5d1f55dcc288a9ef96fe231a314d254b881c90629f70d4e301d",
+      "voxel9_magnitude_px": {
+        "median": 0.0006872797384858131,
+        "max": 0.0009599048062227666
+      }
+    },
+    {
+      "sequence": "indoor_flying2",
+      "dt": 1,
+      "gt_interval_index": 287,
+      "timestamp_start": 1504645276.9140253,
+      "timestamp_end": 1504645276.9458842,
+      "event_time_origin": 1504645267.7161982,
+      "relative_start_seconds": 9.197827100753784,
+      "relative_end_seconds": 9.22968602180481,
+      "start_event": 509809,
+      "end_event": 527460,
+      "anchor_events": 500000,
+      "gt_seconds": 0.03185892105102539,
+      "convgru_input_events": 1000,
+      "convgru_input_seconds": 0.002218008041381836,
+      "voxel9_input_events": 15000,
+      "voxel9_input_start_event": 512460,
+      "voxel9_input_seconds": 0.026782989501953125,
+      "reference_npz_sha256": "db6a61b375feb5b05604db1d708da2ed3b42e4d551b0fe2dc47e1eb2b4f2d664",
+      "color_max_px": 5.0,
+      "event_metrics": {
+        "convgru_flow": {
+          "aee": 4.3340606689453125,
+          "outlier_pct": 69.8952380952381,
+          "valid_pixels": 10500
+        },
+        "voxel9_flow": {
+          "aee": 3.422691583633423,
+          "outlier_pct": 72.81904761904762,
+          "valid_pixels": 10500
+        }
+      },
+      "dense_metrics": {
+        "convgru_flow": {
+          "aee": 5.95826530456543,
+          "outlier_pct": 85.95710914823863,
+          "valid_pixels": 47889
+        },
+        "voxel9_flow": {
+          "aee": 2.5586087703704834,
+          "outlier_pct": 40.13030132180668,
+          "valid_pixels": 47889
+        }
+      },
+      "arrays_file": "indoor_flying2-dt1.npz",
+      "npz_sha256": "a42c83d2c08af99b78435228f273e978c7df7912b50b9348f02f98eeea9ec274",
+      "voxel9_magnitude_px": {
+        "median": 0.00186691724229604,
+        "max": 0.00623842841014266
+      }
+    },
+    {
+      "sequence": "indoor_flying3",
+      "dt": 1,
+      "gt_interval_index": 226,
+      "timestamp_start": 1504645450.3245492,
+      "timestamp_end": 1504645450.3564093,
+      "event_time_origin": 1504645443.0855954,
+      "relative_start_seconds": 7.2389538288116455,
+      "relative_end_seconds": 7.270813941955566,
+      "start_event": 504034,
+      "end_event": 514347,
+      "anchor_events": 500000,
+      "gt_seconds": 0.0318601131439209,
+      "convgru_input_events": 1000,
+      "convgru_input_seconds": 0.0030241012573242188,
+      "voxel9_input_events": 15000,
+      "voxel9_input_start_event": 499347,
+      "voxel9_input_seconds": 0.04546403884887695,
+      "reference_npz_sha256": "aa86a46531c8d110f87d5ab690af8abd86b035bca8d324833a1a6277552a643a",
+      "color_max_px": 5.0,
+      "event_metrics": {
+        "convgru_flow": {
+          "aee": 2.9799633026123047,
+          "outlier_pct": 36.16266698191276,
+          "valid_pixels": 8459
+        },
+        "voxel9_flow": {
+          "aee": 2.1809613704681396,
+          "outlier_pct": 2.718997517437049,
+          "valid_pixels": 8459
+        }
+      },
+      "dense_metrics": {
+        "convgru_flow": {
+          "aee": 3.9029767513275146,
+          "outlier_pct": 61.439224198291555,
+          "valid_pixels": 57128
+        },
+        "voxel9_flow": {
+          "aee": 1.6484745740890503,
+          "outlier_pct": 1.076529897773421,
+          "valid_pixels": 57128
+        }
+      },
+      "arrays_file": "indoor_flying3-dt1.npz",
+      "npz_sha256": "da7097082479df53d764074bb20b38e55555cd9e6a44d7162c9c600d9f678d55",
+      "voxel9_magnitude_px": {
+        "median": 0.0010998471407219768,
+        "max": 0.004910917486995459
+      }
+    },
+    {
+      "sequence": "outdoor_day1",
+      "dt": 4,
+      "gt_interval_index": 18,
+      "timestamp_start": 1506118120.8682165,
+      "timestamp_end": 1506118120.9560535,
+      "event_time_origin": 1506118119.1955414,
+      "relative_start_seconds": 1.6726751327514648,
+      "relative_end_seconds": 1.760512113571167,
+      "start_event": 509636,
+      "end_event": 525925,
+      "anchor_events": 500000,
+      "gt_seconds": 0.08783698081970215,
+      "convgru_input_events": 1000,
+      "convgru_input_seconds": 0.007682085037231445,
+      "voxel9_input_events": 30000,
+      "voxel9_input_start_event": 495925,
+      "voxel9_input_seconds": 0.14744901657104492,
+      "reference_npz_sha256": "902a76e8624ef2da59557a09cd759d629dadffed66ec8c681c7f379fa17ef916",
+      "color_max_px": 20.0,
+      "event_metrics": {
+        "convgru_flow": {
+          "aee": 2.0481369495391846,
+          "outlier_pct": 19.40715883668904,
+          "valid_pixels": 5364
+        },
+        "voxel9_flow": {
+          "aee": 1.7208349704742432,
+          "outlier_pct": 13.683818046234153,
+          "valid_pixels": 5364
+        }
+      },
+      "dense_metrics": {
+        "convgru_flow": {
+          "aee": 4.759625434875488,
+          "outlier_pct": 57.92153457530786,
+          "valid_pixels": 25336
+        },
+        "voxel9_flow": {
+          "aee": 2.0973849296569824,
+          "outlier_pct": 22.916008841174612,
+          "valid_pixels": 25336
+        }
+      },
+      "arrays_file": "outdoor_day1-dt4.npz",
+      "npz_sha256": "6ea141b8f9507f26554b29d2e1b3466d358f90844848de2432c52b6891c86671",
+      "voxel9_magnitude_px": {
+        "median": 0.0009349504834972322,
+        "max": 0.00288594258017838
+      }
+    },
+    {
+      "sequence": "indoor_flying1",
+      "dt": 4,
+      "gt_interval_index": 37,
+      "timestamp_start": 1504645182.2917113,
+      "timestamp_end": 1504645182.4191482,
+      "event_time_origin": 1504645177.4254112,
+      "relative_start_seconds": 4.866300106048584,
+      "relative_end_seconds": 4.993736982345581,
+      "start_event": 518202,
+      "end_event": 542371,
+      "anchor_events": 500000,
+      "gt_seconds": 0.12743687629699707,
+      "convgru_input_events": 1000,
+      "convgru_input_seconds": 0.006695985794067383,
+      "voxel9_input_events": 15000,
+      "voxel9_input_start_event": 527371,
+      "voxel9_input_seconds": 0.07890796661376953,
+      "reference_npz_sha256": "d9ee2efadaaa92ded3786b5155dd14d8c1f4624a4006fc110bcb52baf0de2384",
+      "color_max_px": 20.0,
+      "event_metrics": {
+        "convgru_flow": {
+          "aee": 5.504621982574463,
+          "outlier_pct": 87.0076556085654,
+          "valid_pixels": 9013
+        },
+        "voxel9_flow": {
+          "aee": 4.649840831756592,
+          "outlier_pct": 77.68778431154999,
+          "valid_pixels": 9013
+        }
+      },
+      "dense_metrics": {
+        "convgru_flow": {
+          "aee": 7.759324073791504,
+          "outlier_pct": 94.43749710527534,
+          "valid_pixels": 43182
+        },
+        "voxel9_flow": {
+          "aee": 4.348876476287842,
+          "outlier_pct": 71.26812097633272,
+          "valid_pixels": 43182
+        }
+      },
+      "arrays_file": "indoor_flying1-dt4.npz",
+      "npz_sha256": "13256f0e4d121b4d2e5bfee5359a2bbc39279a01f7cb33c18fdb2dc1614ef4ca",
+      "voxel9_magnitude_px": {
+        "median": 0.002534704515710473,
+        "max": 0.0031523536890745163
+      }
+    },
+    {
+      "sequence": "indoor_flying2",
+      "dt": 4,
+      "gt_interval_index": 71,
+      "timestamp_start": 1504645276.9140253,
+      "timestamp_end": 1504645277.0414624,
+      "event_time_origin": 1504645267.7161982,
+      "relative_start_seconds": 9.197827100753784,
+      "relative_end_seconds": 9.32526421546936,
+      "start_event": 509809,
+      "end_event": 585095,
+      "anchor_events": 500000,
+      "gt_seconds": 0.12743711471557617,
+      "convgru_input_events": 1000,
+      "convgru_input_seconds": 0.0013148784637451172,
+      "voxel9_input_events": 15000,
+      "voxel9_input_start_event": 570095,
+      "voxel9_input_seconds": 0.025235891342163086,
+      "reference_npz_sha256": "42dd2d8572815b5b06fc2b84d620b4298fee905dc324269edae63dce5b1f594f",
+      "color_max_px": 20.0,
+      "event_metrics": {
+        "convgru_flow": {
+          "aee": 26.86561393737793,
+          "outlier_pct": 98.48811105511523,
+          "valid_pixels": 21827
+        },
+        "voxel9_flow": {
+          "aee": 11.98382568359375,
+          "outlier_pct": 94.74962202776378,
+          "valid_pixels": 21827
+        }
+      },
+      "dense_metrics": {
+        "convgru_flow": {
+          "aee": 31.06321907043457,
+          "outlier_pct": 99.06493032590599,
+          "valid_pixels": 43847
+        },
+        "voxel9_flow": {
+          "aee": 10.021771430969238,
+          "outlier_pct": 88.05619540675531,
+          "valid_pixels": 43847
+        }
+      },
+      "arrays_file": "indoor_flying2-dt4.npz",
+      "npz_sha256": "49385ee46cb77ddc6b716bc450dbc38abec6ab759971c48dadec8dce23fd215f",
+      "voxel9_magnitude_px": {
+        "median": 0.007925567217171192,
+        "max": 0.008920835331082344
+      }
+    },
+    {
+      "sequence": "indoor_flying3",
+      "dt": 4,
+      "gt_interval_index": 56,
+      "timestamp_start": 1504645450.3564093,
+      "timestamp_end": 1504645450.4838462,
+      "event_time_origin": 1504645443.0855954,
+      "relative_start_seconds": 7.270813941955566,
+      "relative_end_seconds": 7.3982508182525635,
+      "start_event": 514347,
+      "end_event": 546337,
+      "anchor_events": 500000,
+      "gt_seconds": 0.12743687629699707,
+      "convgru_input_events": 1000,
+      "convgru_input_seconds": 0.004292964935302734,
+      "voxel9_input_events": 15000,
+      "voxel9_input_start_event": 531337,
+      "voxel9_input_seconds": 0.060823917388916016,
+      "reference_npz_sha256": "a44d53ad2c2c6d1f7945fbe596039913dbb81c64206dc55a870fec7ec580f3fa",
+      "color_max_px": 20.0,
+      "event_metrics": {
+        "convgru_flow": {
+          "aee": 11.230952262878418,
+          "outlier_pct": 99.49793795947642,
+          "valid_pixels": 16731
+        },
+        "voxel9_flow": {
+          "aee": 7.872658729553223,
+          "outlier_pct": 92.64837726376187,
+          "valid_pixels": 16731
+        }
+      },
+      "dense_metrics": {
+        "convgru_flow": {
+          "aee": 12.859423637390137,
+          "outlier_pct": 99.36875911330958,
+          "valid_pixels": 54179
+        },
+        "voxel9_flow": {
+          "aee": 5.988531112670898,
+          "outlier_pct": 77.6352461285738,
+          "valid_pixels": 54179
+        }
+      },
+      "arrays_file": "indoor_flying3-dt4.npz",
+      "npz_sha256": "0627f22cf4f0baf9963ca6636524d27e36797b048af877f8740a3f02a6cbad85",
+      "voxel9_magnitude_px": {
+        "median": 0.003288318170234561,
+        "max": 0.003425054019317031
+      }
+    }
+  ],
+  "artifact_location": "Izar: event-flow-memory-bench/runs/requested-flow-figures-3257017/final-artifacts; delivered local PNG/SVG/NPZ. No weights or raw arrays committed."
+}
