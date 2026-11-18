@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "event-flow-memory-bench"
+version = "0.1.0"
+description = "Controlled event-flow input-history and recurrent-memory experiments"
+requires-python = ">=3.10"
+dependencies = ["torch>=2.2", "numpy>=1.24", "h5py>=3.8", "hdf5plugin>=4", "PyYAML>=6", "Pillow>=10"]
+
+[project.optional-dependencies]
+reproduction = ["progress>=1.6"]
+plots = ["matplotlib>=3.7"]
+
+[project.scripts]
+efbench = "event_flow_bench.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"event_flow_bench._vendor.event_flow" = ["LICENSE"]
